@@ -1,0 +1,305 @@
+'use strict';
+
+var services = angular.module('App.LocalStorage', []);
+
+services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
+
+
+    var db = null;
+
+
+
+    function populateTabe(tx, tableName, rows) {
+
+        angular.forEach(rows, function (row) {
+
+            var keys = Object.keys(row).toString()
+
+            var values = [];
+            for (var key in row) {
+                values.push(row[key]);
+            }
+            values = "'" + values.join("','") + "'";
+
+            tx.executeSql('INSERT INTO '+tableName+' (' + keys + ') VALUES (' + values + ')');
+
+        });
+    }
+
+    var initDB = function () {
+        $log.log('initDB');
+
+        var deferred = Q.defer();
+
+        db = window.openDatabase("Database", "1.0", "Demo", 26214400);
+
+        createT_EMPLOYEE()
+            .then(function () {
+                return createT_DEPARTEMENT();
+            })
+            .then(function () {
+                return createT_DEPARTEMENT();
+            })
+            .then(function () {
+                return createT_FONCTION();
+            })
+            .then(function () {
+                return createT_FONCTION();
+            })
+//            .then(function () {
+//                return more();
+//            })
+            .catch(function (err) {
+                $log.error('Error initDB', err);
+                deferred.reject(new Error(err));
+            })
+            .done(function (data) {
+                $log.log('initDB SUCCESS');
+                deferred.resolve(data);
+            })
+
+        return deferred.promise;
+    }
+
+
+    var more = function(){
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+
+        function test(tx) {
+            tx.executeSql('alter table T_EMPLOYEE add constraint fk_T_EMPLOYEE_fonction_1 foreign key (fonction_id) references T_FONCTION (id) on delete restrict on update restrict');
+        };
+
+
+        db.transaction(test, errorCB, successCB);
+
+
+        return deferred.promise;
+    }
+
+
+
+
+
+    var setT_EMPLOYEE = function (rows) {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        var tableName = 'T_EMPLOYEE';
+
+        db.transaction(function (tx) {
+            populateTabe(tx, tableName, rows)
+        }, errorCB, successCB);
+
+        return deferred.promise;
+
+    }
+
+    var setT_DEPARTEMENT = function (rows) {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        var tableName = 'T_DEPARTEMENT';
+
+        db.transaction(function (tx) {
+            populateTabe(tx, tableName, rows)
+        }, errorCB, successCB);
+
+        return deferred.promise;
+
+    }
+
+    var setT_FONCTION = function (rows) {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        var tableName = 'T_FONCTION';
+
+        db.transaction(function (tx) {
+            populateTabe(tx, tableName, rows)
+        }, errorCB, successCB);
+
+        return deferred.promise;
+
+    }
+
+    function createT_EMPLOYEE() {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        function T_EMPLOYEE(tx) {
+            tx.executeSql('DROP TABLE IF EXISTS T_EMPLOYEE');
+            tx.executeSql('create table T_EMPLOYEE (' +
+                'id                        INTEGER PRIMARY KEY AUTOINCREMENT,' +
+                'NOM                       varchar2(50) not null,' +
+                'PRENOM                    varchar2(50) not null,' +
+                'EMAIL                     varchar2(150) not null,' +
+                'ADRESSE                   varchar2(300),' +
+                'fonction_id               bigint,' +
+                'departement_id            bigint)'
+                );
+        };
+
+        db.transaction(T_EMPLOYEE, errorCB, successCB);
+
+        return deferred.promise;
+    }
+
+    function createT_DEPARTEMENT() {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        function T_DEPARTEMENT(tx) {
+
+            tx.executeSql('DROP TABLE IF EXISTS T_DEPARTEMENT');
+            tx.executeSql('create table T_DEPARTEMENT ( ' +
+                'id                       INTEGER PRIMARY KEY AUTOINCREMENT,' +
+                'NOM                      varchar2(50) not null,' +
+                'constraint uq_T_DEPARTEMENT_NOM unique (NOM))'
+                );
+        }
+
+        db.transaction(T_DEPARTEMENT, errorCB, successCB);
+
+        return deferred.promise;
+
+    };
+
+    function createT_FONCTION() {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        function T_FONCTION(tx) {
+
+            tx.executeSql('DROP TABLE IF EXISTS T_FONCTION');
+            tx.executeSql('create table T_FONCTION (' +
+                'id                       INTEGER PRIMARY KEY AUTOINCREMENT,' +
+                'NOM                      varchar2(50) not null,' +
+                'constraint uq_T_FONCTION_NOM unique (NOM))'
+                );
+        }
+
+        db.transaction(T_FONCTION, errorCB, successCB);
+        return deferred.promise;
+    };
+
+
+    function getAllEmployees() {
+
+        var deferred = Q.defer();
+        var result = [];
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve(result);
+        }
+
+        function allEmployees(tx) {
+
+            function successCB(tx, res) {
+                for (var i=0; i<res.rows.length; i++){
+                    result.push(res.rows.item(i));
+                }
+            }
+
+            function errorCB(err) {
+                console.log("Error processing SQL: " + err.message);
+            }
+
+            tx.executeSql('SELECT e.NOM, e.PRENOM, d.NOM AS DEPARTEMENT' +
+                ' FROM T_EMPLOYEE e, T_DEPARTEMENT d' +
+                ' WHERE e.departement_id = d.id'
+                , [], successCB, errorCB);
+        }
+
+        db.transaction(allEmployees, errorCB, successCB);
+        return deferred.promise;
+    };
+
+
+
+
+    return {
+        initDB: initDB,
+        setT_EMPLOYEE: setT_EMPLOYEE,
+        setT_DEPARTEMENT: setT_DEPARTEMENT,
+        setT_FONCTION: setT_FONCTION,
+        getAllEmployees: getAllEmployees
+    };
+});
