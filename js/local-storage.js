@@ -282,9 +282,19 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
                 console.log("Error processing SQL: " + err.message);
             }
 
-            tx.executeSql('SELECT e.NOM, e.PRENOM, d.NOM AS DEPARTEMENT' +
-                ' FROM T_EMPLOYEE e, T_DEPARTEMENT d' +
-                ' WHERE e.departement_id = d.id'
+//            tx.executeSql('SELECT e.NOM, e.PRENOM, d.NOM AS DEPARTEMENT' +
+//                ' FROM T_EMPLOYEE e, T_DEPARTEMENT d' +
+//                ' WHERE e.departement_id = d.id'
+//                , [], successCB, errorCB);
+
+            tx.executeSql('SELECT *,' +
+                ' T_FONCTION.NOM AS FONCTION,' +
+                ' T_DEPARTEMENT.NOM AS DEPARTEMENT' +
+                ' FROM T_EMPLOYEE' +
+                ' LEFT JOIN T_DEPARTEMENT' +
+                ' ON T_EMPLOYEE.departement_id = T_DEPARTEMENT.id'+
+                ' LEFT JOIN T_FONCTION' +
+                ' ON T_EMPLOYEE.fonction_id = T_FONCTION.id'
                 , [], successCB, errorCB);
         }
 

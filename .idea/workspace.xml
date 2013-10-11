@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59b94600-2902-45b7-993e-d39edd69eae5" name="Default" comment="" />
+    <list default="true" id="59b94600-2902-45b7-993e-d39edd69eae5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/local-storage.js" afterPath="$PROJECT_DIR$/js/local-storage.js" />
+    </list>
     <ignored path="JsonEditor.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381444981350" ignored="false" />
@@ -138,7 +140,7 @@
       <file leaf-file-name="local-storage.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/local-storage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="287" column="41" selection-start="7518" selection-end="7518" vertical-scroll-proportion="0.6446962">
+            <state line="290" column="48" selection-start="7617" selection-end="7617" vertical-scroll-proportion="0.5614035">
               <folding />
             </state>
           </provider>
@@ -575,7 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/local-storage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="287" column="41" selection-start="7518" selection-end="7518" vertical-scroll-proportion="0.6446962">
+        <state line="290" column="48" selection-start="7617" selection-end="7617" vertical-scroll-proportion="0.5614035">
           <folding />
         </state>
       </provider>
