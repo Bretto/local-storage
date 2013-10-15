@@ -7,40 +7,51 @@
 }
 
 /* line 9, ../sass/screen.scss */
+body {
+  margin: 20px;
+  background-color: #f9f9f9;
+}
+
+/* line 14, ../sass/screen.scss */
+.well {
+  background-color: #fff;
+}
+
+/* line 18, ../sass/screen.scss */
 .node-list {
   display: inline-block;
 }
-/* line 11, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 .node-list .btn {
   background-color: #ddd;
 }
-/* line 15, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 .node-list .glyphicon-plus-sign {
   padding: 2px 4px 2px 5px;
 }
-/* line 23, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .node-list ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 .node-item {
   margin: 20px;
   display: inline-block;
 }
-/* line 35, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .node-item ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 45, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .node-item .value-wrap {
   display: inline-block;
 }
-/* line 50, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 .node-item .key-wrap {
   display: inline-block;
   float: left;

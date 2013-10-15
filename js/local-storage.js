@@ -7,8 +7,6 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
 
     var db = null;
 
-
-
     function populateTabe(tx, tableName, rows) {
 
         angular.forEach(rows, function (row) {
@@ -182,10 +180,10 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
             tx.executeSql('DROP TABLE IF EXISTS T_EMPLOYEE');
             tx.executeSql('create table T_EMPLOYEE (' +
                 'id                        INTEGER PRIMARY KEY AUTOINCREMENT,' +
-                'NOM                       varchar2(50) not null,' +
-                'PRENOM                    varchar2(50) not null,' +
-                'EMAIL                     varchar2(150) not null,' +
-                'ADRESSE                   varchar2(300),' +
+                'nom                       varchar2(50) not null,' +
+                'prenom                    varchar2(50) not null,' +
+                'email                     varchar2(150) not null,' +
+                'adresse                   varchar2(300),' +
                 'fonction_id               bigint,' +
                 'departement_id            bigint)'
                 );
@@ -215,8 +213,8 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
             tx.executeSql('DROP TABLE IF EXISTS T_DEPARTEMENT');
             tx.executeSql('create table T_DEPARTEMENT ( ' +
                 'id                       INTEGER PRIMARY KEY AUTOINCREMENT,' +
-                'NOM                      varchar2(50) not null,' +
-                'constraint uq_T_DEPARTEMENT_NOM unique (NOM))'
+                'nom                      varchar2(50) not null,' +
+                'constraint uq_T_DEPARTEMENT_nom unique (nom))'
                 );
         }
 
@@ -245,8 +243,8 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
             tx.executeSql('DROP TABLE IF EXISTS T_FONCTION');
             tx.executeSql('create table T_FONCTION (' +
                 'id                       INTEGER PRIMARY KEY AUTOINCREMENT,' +
-                'NOM                      varchar2(50) not null,' +
-                'constraint uq_T_FONCTION_NOM unique (NOM))'
+                'nom                      varchar2(50) not null,' +
+                'constraint uq_T_FONCTION_nom unique (nom))'
                 );
         }
 
@@ -282,19 +280,18 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
                 console.log("Error processing SQL: " + err.message);
             }
 
-//            tx.executeSql('SELECT e.NOM, e.PRENOM, d.NOM AS DEPARTEMENT' +
-//                ' FROM T_EMPLOYEE e, T_DEPARTEMENT d' +
-//                ' WHERE e.departement_id = d.id'
+//            tx.executeSql('SELECT *,' +
+//                ' T_FONCTION.NOM AS FONCTION,' +
+//                ' T_DEPARTEMENT.NOM AS DEPARTEMENT' +
+//                ' FROM T_EMPLOYEE' +
+//                ' LEFT JOIN T_DEPARTEMENT' +
+//                ' ON T_EMPLOYEE.departement_id = T_DEPARTEMENT.id'+
+//                ' LEFT JOIN T_FONCTION' +
+//                ' ON T_EMPLOYEE.fonction_id = T_FONCTION.id'
 //                , [], successCB, errorCB);
 
-            tx.executeSql('SELECT *,' +
-                ' T_FONCTION.NOM AS FONCTION,' +
-                ' T_DEPARTEMENT.NOM AS DEPARTEMENT' +
-                ' FROM T_EMPLOYEE' +
-                ' LEFT JOIN T_DEPARTEMENT' +
-                ' ON T_EMPLOYEE.departement_id = T_DEPARTEMENT.id'+
-                ' LEFT JOIN T_FONCTION' +
-                ' ON T_EMPLOYEE.fonction_id = T_FONCTION.id'
+            tx.executeSql('SELECT *' +
+                ' FROM T_EMPLOYEE'
                 , [], successCB, errorCB);
         }
 

@@ -25,8 +25,6 @@ directives.directive('nodeList', function ($log, $compile) {
 
         scope.newNode = function (data) {
             var d = data || [{"key":"key","value":"value"}];
-
-
             scope.nodes.push(d);
         }
     }
@@ -59,7 +57,6 @@ directives.directive('nodeItem', function ($log, $compile) {
     function link(scope, element, attrs, ctrl) {
 
     }
-
 
     return {
         restrict: 'A',

@@ -22,12 +22,12 @@ services.factory('WebService', function ($http, $log, $rootScope) {
                 angular.forEach(res.employes, function (employe) {
                     var e = {
                         id: employe.id,
-                        NOM: addSingleQuotes(employe.nom),
-                        PRENOM: addSingleQuotes(employe.prenom),
-                        EMAIL: employe.email,
-                        ADRESSE: addSingleQuotes(employe.adresse),
-                        fonction_id: employe.fonction.id,
-                        departement_id: employe.departement.id
+                        nom: addSingleQuotes(employe.nom),
+                        prenom: addSingleQuotes(employe.prenom),
+                        email: employe.email,
+                        adresse: addSingleQuotes(employe.adresse),
+                        fonction_id: employe.fonction_id,
+                        departement_id: employe.departement_id
                     };
 
                     employees.push(e);
@@ -55,7 +55,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
                 angular.forEach(res.departements, function (departement) {
                     var obj = {
                         id: departement.id,
-                        NOM: addSingleQuotes(departement.nom)
+                        nom: addSingleQuotes(departement.nom)
                     };
 
                     employees.push(obj);
@@ -83,7 +83,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
                 angular.forEach(res.fonctions, function (fonction) {
                     var obj = {
                         id: fonction.id,
-                        NOM: addSingleQuotes(fonction.nom)
+                        nom: addSingleQuotes(fonction.nom)
                     };
                     fonctions.push(obj);
                 });

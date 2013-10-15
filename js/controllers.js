@@ -3,7 +3,7 @@
 
 var controllers = angular.module('App.controllers', []);
 
-controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, LocalStorage, WebService) {
+controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, LocalStorage, WebService, DataContext) {
     $log.log('AppCtrl');
 
     LocalStorage
@@ -26,19 +26,68 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         .then(function (fonctions) {
             return LocalStorage.setT_FONCTION(fonctions)
         })
+//
+
+    $scope.employees = null;
+    $scope.departements = null;
+    $scope.fonctions = null;
 
     $scope.onSelectAll = function () {
-
         LocalStorage.getAllEmployees()
             .then(function (employees) {
                 console.log(employees);
             })
-
-
-
-
-
-
     }
+
+    $scope.onSelectEmployee = function () {
+        var emp = employees.byId(1);
+            console.log(emp);
+    }
+
+    $scope.onGetEmployees = function () {
+        DataContext.getEmployees().then(function(res){
+            console.log(res);
+            $scope.employees = res;
+            $scope.$digest();
+
+//            employees.byId = filterEmployeesById(employees);
+        })
+    }
+
+    $scope.onGetFonctions = function () {
+        DataContext.getFonctions().then(function(res){
+            console.log(res);
+            $scope.fonctions = res;
+            $scope.$digest();
+
+//            employees.byId = filterEmployeesById(employees);
+        })
+    }
+
+    $scope.onExportEmployees = function () {
+        var exportEmployees = DataContext.exportEmployees(employees);
+        console.log(exportEmployees);
+    }
+
+
+    $scope.onGetDepartements = function () {
+        DataContext.getDepartements().then(function(res){
+            console.log(res);
+            $scope.departements = res;
+            $scope.$digest();
+        })
+    }
+
+
+
+
+    function filterEmployeesById(employees) {
+        return function (id) {
+            return employees.filter(function (e) { return e.id === id; });
+        };
+    }
+
+
+
 });
 
