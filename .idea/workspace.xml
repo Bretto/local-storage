@@ -6,24 +6,20 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/directives.js" afterPath="$PROJECT_DIR$/js/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/employes.json" afterPath="$PROJECT_DIR$/assets/employes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/entity-model.js" afterPath="$PROJECT_DIR$/js/entity-model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/local-storage.js" afterPath="$PROJECT_DIR$/js/local-storage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/screen.css" afterPath="$PROJECT_DIR$/stylesheets/screen.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/screen.scss" afterPath="$PROJECT_DIR$/sass/screen.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services.js" afterPath="$PROJECT_DIR$/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/web-service.js" afterPath="$PROJECT_DIR$/js/web-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JsonEditor.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381720458871" ignored="false" />
-    <file path="/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381803245244" ignored="false" />
-    <file path="/controllers.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381803285725" ignored="false" />
-    <file path="/directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381372627346" ignored="false" />
+    <file path="/Dummy.txt" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381967173545" ignored="false" />
+    <file path="/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381960611869" ignored="false" />
+    <file path="/controllers.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381817687181" ignored="false" />
+    <file path="/directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381813370236" ignored="false" />
     <file path="/node-data.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381124700630" ignored="false" />
     <file path="/node-editor.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381052902962" ignored="false" />
-    <file path="/screen.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381793555193" ignored="false" />
+    <file path="/screen.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381985870701" ignored="false" />
     <file path="/node-list.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381373045933" ignored="false" />
     <file path="/node-item.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381105556856" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/synchro.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381198103212" ignored="false" />
@@ -36,7 +32,7 @@
     <file path="$PROJECT_DIR$/../releve-de-prix/www/partials/home.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381204985269" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/sass/home.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381204950109" ignored="false" />
     <file path="/home.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381204948257" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/stylesheets/screen.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381205349556" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/stylesheets/screen.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381874693146" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/stylesheets/home.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381205349556" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/partials/admin.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381205365796" ignored="false" />
     <file path="/admin.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381205365796" ignored="false" />
@@ -48,35 +44,35 @@
     <file path="$PROJECT_DIR$/../releve-de-prix/www/partials/bordereau-detail.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381206138288" ignored="false" />
     <file path="/bordereau-detail.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381206138288" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/partials/releve.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381273987264" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/partials/export.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381206306801" ignored="false" />
-    <file path="/export.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381206306801" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381277878114" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/partials/export.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381810411130" ignored="false" />
+    <file path="/export.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381810411130" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876973122" ignored="false" />
     <file path="/releve.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381271690210" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/releve.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381356100903" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/releve.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381875162033" ignored="false" />
     <file path="/releve.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381276001538" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/bordereau.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381278266834" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/bordereau-detail.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381289596869" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/bordereau.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381809733504" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/bordereau-detail.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381875213152" ignored="false" />
     <file path="/bordereau-detail.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381284719660" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/app-model.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381790806572" ignored="false" />
-    <file path="/app-model.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381790806572" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/HelloCordova/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/AndroidManifest.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/bin/AndroidManifest.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/build/HelloCordova.app/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/build/HelloCordova.app/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/res/xml/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/assets/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/res/values/strings.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381358999196" ignored="false" />
-    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381361907979" ignored="false" />
-    <file path="/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381732227848" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/app-model.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381875195110" ignored="false" />
+    <file path="/app-model.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381875195110" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/HelloCordova/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381896291740" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/AndroidManifest.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/bin/AndroidManifest.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/build/HelloCordova.app/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381896291740" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/build/HelloCordova.app/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381896291740" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381896291740" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/res/xml/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/assets/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/res/values/strings.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381880310623" ignored="false" />
+    <file path="/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381984266198" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/sass/base.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381364708610" ignored="false" />
     <file path="/base.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381364197238" ignored="false" />
-    <file path="/local-storage.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381466253766" ignored="false" />
+    <file path="/local-storage.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381810389731" ignored="false" />
     <file path="/web-service.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381729079083" ignored="false" />
     <file path="/departements.json" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381448656827" ignored="false" />
     <file path="$PROJECT_DIR$/../JsonEditor/js/controllers.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381699360040" ignored="false" />
-    <file path="$PROJECT_DIR$/../JsonEditor/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381699650441" ignored="false" />
+    <file path="$PROJECT_DIR$/../JsonEditor/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381870525301" ignored="false" />
     <file path="/fragment.js2" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381655297974" ignored="false" />
     <file path="/entity-model.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381802953340" ignored="false" />
     <file path="$USER_HOME$/Downloads/breeze-runtime-plus-1.4.2/Samples/Edmunds/Edmunds/app/model.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381708416803" ignored="false" />
@@ -86,8 +82,28 @@
     <file path="$PROJECT_DIR$/../chat-box/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381720538893" ignored="false" />
     <file path="$PROJECT_DIR$/../chat-box/routes/index.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381720654545" ignored="false" />
     <file path="/index.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381720575797" ignored="false" />
-    <file path="/dummy.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381795763889" ignored="false" />
+    <file path="/dummy.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381980557315" ignored="false" />
     <file path="/fonctions.json" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381801843296" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/sass/export.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381807452562" ignored="false" />
+    <file path="/export.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381804356276" ignored="false" />
+    <file path="/bordereau.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381809721980" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/local-storage.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381810397746" ignored="false" />
+    <file path="/form-item.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381816212248" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381878923806" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/sass/screen.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381874667554" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/plugins/ios.json" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/www/stylesheets/bootstrap.min.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/assets/www/stylesheets/bootstrap.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/plugins/android.json" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/assets/www/stylesheets/bootstrap.min.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/build/HelloCordova.app/www/stylesheets/bootstrap.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/platforms/ios/build/HelloCordova.app/www/stylesheets/bootstrap.min.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381876725946" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381878737524" ignored="false" />
+    <file path="/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381878170273" ignored="false" />
+    <file path="$PROJECT_DIR$/../releve-de-prix/www/js/main.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879410217" ignored="false" />
+    <file path="/main.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879406506" ignored="false" />
+    <file path="/form-field.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381982047200" ignored="false" />
+    <file path="/breeze-directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381985162067" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,55 +123,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="53" selection-start="555" selection-end="555" vertical-scroll-proportion="18.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="datacontext.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/datacontext.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="38" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employes-full.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/employes-full.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="536" selection-start="536" selection-end="536" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fonctions.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/fonctions.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="37" selection-start="37" selection-end="37" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controllers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="35" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entity-model.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/entity-model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.0">
+            <state line="19" column="13" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,19 +141,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="directives.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/directives.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="53" selection-start="736" selection-end="736" vertical-scroll-proportion="0.36549708">
+            <state line="62" column="0" selection-start="1562" selection-end="1562" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -192,6 +154,60 @@
         <entry file="file://$PROJECT_DIR$/js/web-service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="54" column="74" selection-start="1711" selection-end="1711" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entity-model.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/entity-model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="21" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sass/screen.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="24" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.80994153">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filters.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/filters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directives.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/directives.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="5" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="breeze-directives.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/breeze-directives.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="239" column="40" selection-start="9110" selection-end="9110" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -215,22 +231,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/partials/node-list.html" />
-        <option value="$PROJECT_DIR$/assets/departements.json" />
-        <option value="$PROJECT_DIR$/js/jsonResultsAdapter.js" />
-        <option value="$PROJECT_DIR$/js/directives.js" />
         <option value="$PROJECT_DIR$/assets/employes.json" />
         <option value="$PROJECT_DIR$/assets/employes-full.json" />
         <option value="$PROJECT_DIR$/js/web-service.js" />
         <option value="$PROJECT_DIR$/js/local-storage.js" />
-        <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/sass/screen.scss" />
         <option value="$PROJECT_DIR$/assets/fonctions.json" />
-        <option value="$PROJECT_DIR$/js/entity-model.js" />
         <option value="$PROJECT_DIR$/js/datacontext.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/js/services.js" />
+        <option value="$PROJECT_DIR$/partials/form-item.html" />
+        <option value="$PROJECT_DIR$/js/directives.js" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/partials/form-field.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/libs/breeze-directives.js" />
+        <option value="$PROJECT_DIR$/js/entity-model.js" />
+        <option value="$PROJECT_DIR$/sass/screen.scss" />
       </list>
     </option>
   </component>
@@ -309,6 +325,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -327,20 +357,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -349,7 +365,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor.preferences.smartKeys" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chat-box" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../releve-de-prix" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -506,51 +522,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/build.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/departements.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="2" selection-end="14" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/employes.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="2" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/filters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/web-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="74" selection-start="1711" selection-end="1711" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -569,6 +543,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/partials/form-field.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="346" selection-end="346" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="10" selection-start="3797" selection-end="3797" vertical-scroll-proportion="-65.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="29" selection-start="2169" selection-end="2169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/datacontext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/local-storage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="277" column="0" selection-start="7174" selection-end="7174" vertical-scroll-proportion="0.0">
@@ -576,44 +585,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="1562" selection-end="1562" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/web-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="74" selection-start="1711" selection-end="1711" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/breeze-directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="239" column="40" selection-start="9110" selection-end="9110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
+        <state line="58" column="5" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/entity-model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1333" selection-end="1333" vertical-scroll-proportion="0.0">
+        <state line="87" column="21" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/datacontext.js">
+    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="38" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="35" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="53" selection-start="555" selection-end="555" vertical-scroll-proportion="18.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="53" selection-start="736" selection-end="736" vertical-scroll-proportion="0.36549708">
+        <state line="87" column="24" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.80994153">
           <folding />
         </state>
       </provider>

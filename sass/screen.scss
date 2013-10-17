@@ -15,6 +15,13 @@ body{
   background-color: #fff;
 }
 
+.active{
+  td{
+    color: #ffffff;
+    background-color: #66afe9 !important;
+  }
+}
+
 .node-list{
 
   .btn{
@@ -61,4 +68,32 @@ body{
     float: left;
   }
 
+}
+
+.form-control{
+  display: inline-block;
+  width: auto;
+}
+
+.error-msg{
+  background-color: #ff0000;
+  padding: 7px 15px;
+  margin: 0 27px;
+  position: absolute;
+  border: solid #ccc 1px;
+  border-radius: 5px;
+  color: #fff;
+
+  i{
+    padding: 0 10px 0 0;
+  }
+}
+
+.error-required{
+  padding: 6px;
+  color: #ff0000;
+}
+
+input:invalid, select:invalid {
+  border: red solid 1px !important;
 }

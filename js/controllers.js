@@ -32,6 +32,33 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     $scope.departements = null;
     $scope.fonctions = null;
 
+//    $scope.formData = [{label:"Nom", type:"text", key:'nom'}, {label:"Email", type:"email", key:'email'}];
+
+
+    $scope.isActive = function (item) {
+        return this.activeItem === item;
+    }
+
+    $scope.onSelect = function (item){
+        $scope.activeItem = item;
+
+        var currentEntity = item;
+        var formData = [];
+
+
+        for(var key in currentEntity){
+
+            if(key !== 'entityAspect' && key !== '_backingStore' && key !== '_$typeName'){
+                if(angular.isString(currentEntity[key])){
+                    formData.push({label:key, type:"text", key:key});
+                }
+            }
+        }
+        $scope.formData = formData;
+//        $scope.$digest();
+    }
+
+
     $scope.onSelectAll = function () {
         LocalStorage.getAllEmployees()
             .then(function (employees) {
@@ -49,6 +76,7 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
             console.log(res);
             $scope.employees = res;
             $scope.$digest();
+
 
 //            employees.byId = filterEmployeesById(employees);
         })
