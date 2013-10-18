@@ -47,7 +47,8 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter) {
         getFonctions: getFonctions,
         getEmployees: getEmployees,
         getDepartements: getDepartements,
-        exportEmployees: exportEmployees
+        exportEmployees: exportEmployees,
+        manager: manager
     };
 
 });

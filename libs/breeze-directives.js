@@ -55,9 +55,11 @@
 
         function link(scope, element, attrs) {
 
-            console.log('zValidate');
-
             var info = getInfo(scope, attrs);
+
+            setDisabled(scope, info);
+            setRequired(element, info);
+
             scope.$watch(info.getValErrs, valErrsChanged);
 
             function valErrsChanged(newValue) {
@@ -65,7 +67,14 @@
                 // http://dev.w3.org/html5/spec-preview/constraints.html#the-constraint-validation-api
                 var el = element[0]; // unwrap 'jQuery' element
 
-                setRequired(element, info);
+
+
+                // TODO fix me !!!!! I am a hack !!!!
+                if(newValue){
+                    scope.$parent.form.$setValidity(scope.formField.key,false);
+                }else{
+                    scope.$parent.form.$setValidity(scope.formField.key,true);
+                }
 
                 if (el.setCustomValidity) {
                     el.setCustomValidity(newValue);
@@ -200,10 +209,28 @@
             if (requiredProperties && requiredProperties[info.propertyPath]) {
                 var reqHtml = config.zRequiredTemplate;
                 var reqEl = angular.element(reqHtml);
+//                element.attr('required', true);
                 element.after(reqEl);
             }
 
             el.hasSetRequired = true;  // don't set again
+        }
+
+        function setDisabled(scope, info) {
+
+            var entityType = info.getType();
+            if (!entityType) { return; } // no entity, type is unknown, quit
+
+            var props = info.getType().getProperties();
+
+            for (var i = 0; i < props.length; i++) {
+                var obj = props[i];
+                if(obj.name === scope.formField.key && obj.isPartOfKey){
+                    scope.isReadOnly = true;
+                }
+            }
+
+
         }
 
     }

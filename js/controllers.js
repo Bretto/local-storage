@@ -43,17 +43,26 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         $scope.activeItem = item;
 
         var currentEntity = item;
+
+        var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
         var formData = [];
 
 
-        for(var key in currentEntity){
 
-            if(key !== 'entityAspect' && key !== '_backingStore' && key !== '_$typeName'){
-                if(angular.isString(currentEntity[key])){
-                    formData.push({label:key, type:"text", key:key});
-                }
-            }
+
+//        for(var key in currentEntity){
+
+        for (var i = 0; i < props.length; i++) {
+            var prop = props[i];
+            formData.push({label:prop.name, type:"text", key:prop.name});
         }
+
+//            if(key !== 'entityAspect' && key !== '_backingStore' && key !== '_$typeName' && key !== '$$hashKey'){
+//                if(currentEntity[key]){
+//                    formData.push({label:key, type:"text", key:key});
+//                }
+//            }
+//        }
         $scope.formData = formData;
 //        $scope.$digest();
     }
@@ -105,6 +114,11 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
             $scope.$digest();
         })
     }
+
+
+//    $scope.isUnchanged = function(user) {
+//        return angular.equals(user, $scope.o);
+//    };
 
 
 

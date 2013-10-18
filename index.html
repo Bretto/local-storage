@@ -91,11 +91,13 @@
 <div class="row">
     <div class="col-md-12">
         <div class="well">
-            <form class="form-horizontal" role="form">
-                <div form-field data-ng-repeat="formField in formData"></div>
+            <form novalidate name="form" class="form-horizontal">
+                <div data-ng-repeat="formField in formData">
+                    <div form-field ></div>
+                </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-5">
-                        <button type="submit" class="btn btn-default">Save</button>
+                        <button type="submit" class="btn btn-default" ng-disabled="form.$invalid">Save</button>
                         <button type="submit" class="btn btn-default">Cancel</button>
                         <button type="submit" class="btn btn-default">Delete</button>
                     </div>

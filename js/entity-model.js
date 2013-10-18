@@ -35,6 +35,7 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
                     dataType: DT.String,
                     validators:[
                         Validator.required(),
+                        Validator.emailAddress(),
                         Validator.maxLength({maxLength: 20})
                     ]
                 },
@@ -45,8 +46,8 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
                         Validator.maxLength({maxLength: 20})
                     ]
                 },
-                departement_id: { dataType: "Int64" },
-                fonction_id:    { dataType: "Int64" }
+                departement_id: { dataType: DT.Int64 },
+                fonction_id:    { dataType: DT.Int64 }
             },
             navigationProperties: {
                 departement: {
@@ -64,7 +65,14 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
             shortName: "Departement",
             namespace: "Context",
             dataProperties: {
-                id:             { dataType: "String", isPartOfKey: true },
+                id:             {
+                    dataType: DT.Int64,
+                    isPartOfKey: true,
+                    validators:[
+                        Validator.required(),
+                        Validator.integer()
+                    ]
+                },
                 nom:            {
                     dataType: "String",
                     validators:[
@@ -79,7 +87,7 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
             shortName: "Fonction",
             namespace: "Context",
             dataProperties: {
-                id:             { dataType: "String", isPartOfKey: true },
+                id:             { dataType: DT.Int64, isPartOfKey: true },
                 nom:            {
                     dataType: "String",
                     validators:[

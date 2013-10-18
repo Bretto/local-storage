@@ -1,7 +1,8 @@
-<div class="form-group" >
+<div class="form-group">
     <label class="col-sm-2 control-label">{{formField.label}}</label>
     <!--<div class="col-sm-5">-->
         <!--activeItem[formField.key]-->
-        <input ng-model="activeItem[formField.key]" type="{{formField.type}}" class="form-control"  placeholder="{{formField.label}}" data-z-validate>
-    <!--</div>-->
+        <input ng-model="activeItem[formField.key]" type="{{formField.type}}" class="form-control"
+               name="{{formField.key}}" placeholder="{{formField.label}}" data-z-validate
+                ng-disabled="isReadOnly">
 </div>
