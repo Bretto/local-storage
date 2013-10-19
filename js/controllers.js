@@ -39,22 +39,20 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         return this.activeItem === item;
     }
 
-    $scope.onSelect = function (item){
+    $scope.onSelect = function (item) {
         $scope.activeItem = item;
+        $scope.originActiveItem = item;
 
         var currentEntity = item;
 
         var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
         var formData = [];
 
-
-
-
 //        for(var key in currentEntity){
 
         for (var i = 0; i < props.length; i++) {
             var prop = props[i];
-            formData.push({label:prop.name, type:"text", key:prop.name});
+            formData.push({label: prop.name, type: "text", key: prop.name});
         }
 
 //            if(key !== 'entityAspect' && key !== '_backingStore' && key !== '_$typeName' && key !== '$$hashKey'){
@@ -67,6 +65,11 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 //        $scope.$digest();
     }
 
+    $scope.onAddEmployee = function () {
+        var newEmp = DataContext.manager.createEntity('Employee', {});
+        $scope.employees.push(newEmp);
+    }
+
 
     $scope.onSelectAll = function () {
         LocalStorage.getAllEmployees()
@@ -77,22 +80,42 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
     $scope.onSelectEmployee = function () {
         var emp = employees.byId(1);
-            console.log(emp);
+        console.log(emp);
     }
 
     $scope.onGetEmployees = function () {
-        DataContext.getEmployees().then(function(res){
-            console.log(res);
-            $scope.employees = res;
-            $scope.$digest();
-
+//        DataContext.getEmployees().then(function(res){
+//            console.log(res);
+//            $scope.employees = res;
+//            $scope.$digest();
 
 //            employees.byId = filterEmployeesById(employees);
-        })
+//        })
+
+        LocalStorage.getAllEmployees()
+            .then(function (res) {
+
+                angular.forEach(res, function (entity) {
+                    var newEmp = DataContext.manager.createEntity('Employee', entity);
+                    newEmp.entityAspect.acceptChanges();
+                })
+
+                DataContext.getEmployees().then(function (res) {
+
+                    angular.forEach(res, function (entity) {
+
+                    });
+
+                    console.log(res);
+                    $scope.employees = res;
+                    $scope.$digest();
+
+                })
+            });
     }
 
     $scope.onGetFonctions = function () {
-        DataContext.getFonctions().then(function(res){
+        DataContext.getFonctions().then(function (res) {
             console.log(res);
             $scope.fonctions = res;
             $scope.$digest();
@@ -108,7 +131,7 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
 
     $scope.onGetDepartements = function () {
-        DataContext.getDepartements().then(function(res){
+        DataContext.getDepartements().then(function (res) {
             console.log(res);
             $scope.departements = res;
             $scope.$digest();
@@ -116,19 +139,36 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     }
 
 
-//    $scope.isUnchanged = function(user) {
-//        return angular.equals(user, $scope.o);
-//    };
+    $scope.isUnchanged = function (activeItem) {
+
+//        console.log('state:', activeItem.entityAspect.entityState.name);
+//        console.log('originaleVals:', activeItem.entityAspect.originalValues);
+//        angular.equals(activeItem, $scope.originActiveItem);
+
+        if (!activeItem)return;
+        var state = activeItem.entityAspect.entityState;
+        return (state.isUnchanged()) ? true : false;
+    };
 
 
-
+//    function getSimpleObject(entity){
+//
+//        var obj = {};
+//
+//        var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
+//
+//
+//
+//        return obj;
+//    }
 
     function filterEmployeesById(employees) {
         return function (id) {
-            return employees.filter(function (e) { return e.id === id; });
+            return employees.filter(function (e) {
+                return e.id === id;
+            });
         };
     }
-
 
 
 });

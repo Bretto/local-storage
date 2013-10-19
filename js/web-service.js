@@ -34,6 +34,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
                 });
 
                 deferred.resolve(employees);
+
             })
             .error(function (err) {
                 $log.log('getEmployees ERROR');
