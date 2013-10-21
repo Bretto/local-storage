@@ -15,7 +15,7 @@ services.factory('WebSql', function ($log, Utils) {
                 values.push(row[key]);
             }
             values = "'" + values.join("','") + "'";
-            tx.executeSql('REPLACE INTO '+tableName+' (' + keys + ') VALUES (' + values + ')');
+            tx.executeSql('REPLACE INTO ' + tableName + ' (' + keys + ') VALUES (' + values + ')');
 
         });
     }
@@ -138,7 +138,7 @@ services.factory('WebSql', function ($log, Utils) {
         return deferred.promise;
     }
 
-    var saveEntity = function (entity, rows) {
+    var saveEntityBatch = function (entity, rows) {
 
         var deferred = Q.defer();
 
@@ -150,15 +150,15 @@ services.factory('WebSql', function ($log, Utils) {
         function successCB() {
             console.log("success!");
 
-            getAllEntity(entity).then(function(entities){
+            getAllEntity(entity).then(function (entities) {
                 deferred.resolve(entities);
             })
         }
 
-        var tableName = 'T_'+entity.toUpperCase();
+        var tableName = 'T_' + entity.toUpperCase();
 
         angular.forEach(rows, function (obj) {
-            for(key in obj){
+            for (key in obj) {
                 var value = obj[key];
                 obj[key] = Utils.closeSingleQuotes(value);
             }
@@ -166,6 +166,63 @@ services.factory('WebSql', function ($log, Utils) {
 
         db.transaction(function (tx) {
             populateTabe(tx, tableName, rows)
+        }, errorCB, successCB);
+
+        return deferred.promise;
+
+    }
+
+    var saveEntity = function (entity) {
+
+        var entityType = entity.entityType.shortName;
+        var data = Utils.entityToJson(entity);
+
+        var deferred = Q.defer();
+        var entityId = data.id;
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+
+//            getEntityById(entity).then(function (entities) {
+//                deferred.resolve(entities);
+//            })
+        }
+
+        var tableName = 'T_' + entityType.toUpperCase();
+
+
+        for (key in data) {
+            var value = data[key];
+            data[key] = Utils.closeSingleQuotes(value);
+        }
+
+        db.transaction(function (tx) {
+
+            function successCB2(tx, res) {
+
+                for (var i = 0; i < res.rows.length; i++) {
+                    result.push(res.rows.item(i));
+                }
+            }
+
+            function errorCB2(err) {
+                console.log("Error processing SQL: " + err.message);
+            }
+
+
+            var keys = Object.keys(data).toString()
+
+            var values = [];
+            for (var key in data) {
+                values.push(data[key]);
+            }
+            values = "'" + values.join("','") + "'";
+            tx.executeSql('REPLACE INTO ' + tableName + ' (' + keys + ') VALUES (' + values + ')', [], successCB2, errorCB2);
         }, errorCB, successCB);
 
         return deferred.promise;
@@ -190,7 +247,7 @@ services.factory('WebSql', function ($log, Utils) {
         function allEmployees(tx) {
 
             function successCB(tx, res) {
-                for (var i=0; i<res.rows.length; i++){
+                for (var i = 0; i < res.rows.length; i++) {
                     result.push(res.rows.item(i));
                 }
             }
@@ -200,7 +257,7 @@ services.factory('WebSql', function ($log, Utils) {
             }
 
             tx.executeSql('SELECT *' +
-                ' FROM T_'+entityType.toUpperCase()
+                ' FROM T_' + entityType.toUpperCase()
                 , [], successCB, errorCB);
         }
 
@@ -211,6 +268,7 @@ services.factory('WebSql', function ($log, Utils) {
     return {
         initDB: initDB,
         saveEntity: saveEntity,
+        saveEntityBatch: saveEntityBatch,
         getAllEntity: getAllEntity
     };
 });

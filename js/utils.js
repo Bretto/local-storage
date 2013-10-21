@@ -12,5 +12,25 @@ services.factory('Utils', function () {
         return value
     }
 
+
+    utils.entityToJson = function(entity){
+        var json = {};
+
+        var props = entity.entityType.getProperties();
+        var keys = [];
+
+        angular.forEach(props, function(obj){
+             if(!obj.associationName){
+                 keys.push(obj.name);
+             }
+        });
+
+        angular.forEach(keys, function(key){
+            json[key] = entity[key];
+        });
+
+        return json
+    }
+
     return utils;
 });

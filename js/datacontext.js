@@ -17,28 +17,6 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
 
     EntityModel.initialize(manager.metadataStore);
 
-    function getEmployees() {
-        var query = breeze.EntityQuery
-            .from("assets/employes.json");
-        return manager.executeQuery(query).then(returnResults);
-    }
-
-    function getFonctions() {
-        var query = breeze.EntityQuery
-            .from("assets/fonctions.json");
-        return manager.executeQuery(query).then(returnResults);
-    }
-
-    function getDepartements() {
-        var query = breeze.EntityQuery
-            .from("/assets/departements.json")
-        return manager.executeQuery(query).then(returnResults);
-    }
-
-    function returnResults(data) {
-        return data.results
-    }
-
     function exportEmployees(employees) {
         return manager.exportEntities(employees)
     }
@@ -79,12 +57,29 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
 
     }
 
+    function saveEntity(entity) {
+
+        var deferred = Q.defer();
+
+        StorageProvider.saveEntity(entity)
+            .catch(function (err) {
+                $log.error('Error saveEntity', err);
+                deferred.reject(new Error(err));
+            })
+            .done(function (res) {
+                var entities = createEntity(entityType, res);
+                deferred.resolve(entities);
+            })
+
+
+        return deferred.promise;
+
+    }
+
     return {
-        getAllEntity: getAllEntity,
-        getFonctions: getFonctions,
-        getEmployees: getEmployees,
-        getDepartements: getDepartements,
         exportEmployees: exportEmployees,
+        getAllEntity: getAllEntity,
+        saveEntity:saveEntity,
         manager: manager
     };
 

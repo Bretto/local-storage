@@ -98,9 +98,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-5">
-                        <button type="submit" class="btn btn-default" ng-disabled="form.$invalid || isUnchanged(activeItem)">Save</button>
-                        <button type="submit" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-default">Delete</button>
+                        <button class="btn btn-default"
+                                ng-disabled="form.$invalid || isUnchanged(activeItem)"
+                                data-ng-click="onSave(activeItem)">Save</button>
+                        <button class="btn btn-default">Cancel</button>
+                        <button class="btn btn-default">Delete</button>
                     </div>
                 </div>
             </form>

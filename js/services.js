@@ -3,7 +3,7 @@
 var services = angular.module('App.services', []);
 
 services.value('GLOBALS', {
-    MODE:'',
+    MODE:'DB',
     DB:'DB',
     WS:'WS'
 });

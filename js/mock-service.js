@@ -11,7 +11,7 @@ services.factory('MockService', function (Utils, $log, StorageProvider) {
             .success(function (res) {
                 $log.log('getAllEmployee SUCCESS');
 
-                StorageProvider.saveEntity('Employee', res.employes)
+                StorageProvider.saveEntityBatch('Employee', res.employes)
                     .then(function (entities) {
                         deferred.resolve(entities);
                     })
@@ -32,7 +32,7 @@ services.factory('MockService', function (Utils, $log, StorageProvider) {
             .success(function (res) {
                 $log.log('getDepartements SUCCESS');
 
-                StorageProvider.saveEntity('Departement', res.departements)
+                StorageProvider.saveEntityBatch('Departement', res.departements)
                     .then(function (entities) {
                         deferred.resolve(entities);
                     })
@@ -53,7 +53,7 @@ services.factory('MockService', function (Utils, $log, StorageProvider) {
             .success(function (res) {
                 $log.log('getAllFonction SUCCESS');
 
-                StorageProvider.saveEntity('Fonction', res.fonctions)
+                StorageProvider.saveEntityBatch('Fonction', res.fonctions)
                     .then(function (entities) {
                         deferred.resolve(entities);
                     })

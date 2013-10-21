@@ -183,6 +183,15 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 //        return obj;
 //    }
 
+
+    $scope.onSave = function(activeItem){
+        DataContext.saveEntity(activeItem)
+            .then(function(){
+
+        })
+    }
+
+
     function filterEmployeesById(employees) {
         return function (id) {
             return employees.filter(function (e) {
