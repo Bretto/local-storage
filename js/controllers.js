@@ -115,15 +115,21 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 //                })
 //            });
 
-        DataContext.getAllEntity('Employee').then(function(res){
-            console.log(res);
-        });
+        DataContext.getAllEntity('Employee')
+            .then(function (res) {
+                console.log(res);
+                $scope.employees = res;
+                $scope.$digest();
+            });
     }
 
     $scope.onGetFonctions = function () {
-        DataContext.getAllEntity('Fonction').then(function(res){
-            console.log(res);
-        });
+        DataContext.getAllEntity('Fonction')
+            .then(function (res) {
+                console.log(res);
+                $scope.fonctions = res;
+                $scope.$digest();
+            });
 //        DataContext.getFonctions().then(function (res) {
 //            console.log(res);
 //            $scope.fonctions = res;
@@ -140,9 +146,12 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
 
     $scope.onGetDepartements = function () {
-        DataContext.getAllEntity('Departement').then(function(res){
-            console.log(res);
-        });
+        DataContext.getAllEntity('Departement')
+            .then(function (res) {
+                console.log(res);
+                $scope.departements = res;
+                $scope.$digest();
+            });
 //        DataContext.getDepartements().then(function (res) {
 //            console.log(res);
 //            $scope.departements = res;

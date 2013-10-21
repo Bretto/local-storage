@@ -53,14 +53,18 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
             entities.push(newEntity);
         });
 
-        return entities;
+        // two ways of doing it array of breeze query...
+        var query = new breeze.EntityQuery(entityType).toType(entityType)
+        var results = manager.executeQueryLocally(query);
+
+        return results;
     }
 
     function getAllEntity(entityType) {
 
         var deferred = Q.defer();
 
-        DataProvider['getAll' + entityType]()
+        DataProvider.getAllEntity(entityType)
             .catch(function (err) {
                 $log.error('Error getAllEntity', err);
                 deferred.reject(new Error(err));

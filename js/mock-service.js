@@ -1,6 +1,6 @@
 var services = angular.module('App.MockService', []);
 
-services.factory('MockService', function (Utils, $log) {
+services.factory('MockService', function (Utils, $log, StorageProvider) {
 
 
     var getAllEmployee = function () {
@@ -11,23 +11,10 @@ services.factory('MockService', function (Utils, $log) {
             .success(function (res) {
                 $log.log('getAllEmployee SUCCESS');
 
-                var employees = [];
-                angular.forEach(res.employes, function (employe) {
-                    var e = {
-                        id: employe.id,
-                        nom: Utils.closeSingleQuotes(employe.nom),
-                        prenom: Utils.closeSingleQuotes(employe.prenom),
-                        email: employe.email,
-                        adresse: Utils.closeSingleQuotes(employe.adresse),
-                        fonction_id: employe.fonction_id,
-                        departement_id: employe.departement_id
-                    };
-
-                    employees.push(e);
-                });
-
-                deferred.resolve(employees);
-
+                StorageProvider.saveEntity('Employee', res.employes)
+                    .then(function (entities) {
+                        deferred.resolve(entities);
+                    })
             })
             .error(function (err) {
                 $log.log('getAllEmployee ERROR');
@@ -45,17 +32,10 @@ services.factory('MockService', function (Utils, $log) {
             .success(function (res) {
                 $log.log('getDepartements SUCCESS');
 
-                var employees = [];
-                angular.forEach(res.departements, function (departement) {
-                    var obj = {
-                        id: departement.id,
-                        nom: Utils.closeSingleQuotes(departement.nom)
-                    };
-
-                    employees.push(obj);
-                });
-
-                deferred.resolve(employees);
+                StorageProvider.saveEntity('Departement', res.departements)
+                    .then(function (entities) {
+                        deferred.resolve(entities);
+                    })
             })
             .error(function (err) {
                 $log.log('getAllDepartement ERROR');
@@ -73,16 +53,10 @@ services.factory('MockService', function (Utils, $log) {
             .success(function (res) {
                 $log.log('getAllFonction SUCCESS');
 
-                var fonctions = [];
-                angular.forEach(res.fonctions, function (fonction) {
-                    var obj = {
-                        id: fonction.id,
-                        nom: Utils.closeSingleQuotes(fonction.nom)
-                    };
-                    fonctions.push(obj);
-                });
-
-                deferred.resolve(fonctions);
+                StorageProvider.saveEntity('Fonction', res.fonctions)
+                    .then(function (entities) {
+                        deferred.resolve(entities);
+                    })
             })
             .error(function (err) {
                 $log.log('getAllFonction ERROR');
@@ -92,10 +66,30 @@ services.factory('MockService', function (Utils, $log) {
         return deferred.promise;
     }
 
+    var getAllEntity = function (entityType) {
+
+        var fn = null;
+
+        switch (entityType) {
+
+            case 'Employee':
+                fn = getAllEmployee();
+                break;
+
+            case 'Departement':
+                fn = getAllDepartement();
+                break;
+
+            case 'Fonction':
+                fn = getAllFonction();
+                break;
+        }
+
+        return fn
+    }
+
 
     return {
-        getAllEmployee: getAllEmployee,
-        getAllDepartement: getAllDepartement,
-        getAllFonction: getAllFonction
+        getAllEntity: getAllEntity
     };
 });

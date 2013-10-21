@@ -1,6 +1,6 @@
 var services = angular.module('App.WebSql', []);
 
-services.factory('WebSql', function ($log) {
+services.factory('WebSql', function ($log, Utils) {
 
     var db = null;
 
@@ -15,8 +15,7 @@ services.factory('WebSql', function ($log) {
                 values.push(row[key]);
             }
             values = "'" + values.join("','") + "'";
-
-            tx.executeSql('INSERT INTO '+tableName+' (' + keys + ') VALUES (' + values + ')');
+            tx.executeSql('REPLACE INTO '+tableName+' (' + keys + ') VALUES (' + values + ')');
 
         });
     }
@@ -36,8 +35,8 @@ services.factory('WebSql', function ($log) {
         }
 
         function T_EMPLOYEE(tx) {
-            tx.executeSql('DROP TABLE IF EXISTS T_EMPLOYEE');
-            tx.executeSql('create table T_EMPLOYEE (' +
+//            tx.executeSql('DROP TABLE IF EXISTS T_EMPLOYEE');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS T_EMPLOYEE (' +
                 'id                        INTEGER PRIMARY KEY AUTOINCREMENT,' +
                 'nom                       varchar2(50) not null,' +
                 'prenom                    varchar2(50) not null,' +
@@ -69,8 +68,8 @@ services.factory('WebSql', function ($log) {
 
         function T_DEPARTEMENT(tx) {
 
-            tx.executeSql('DROP TABLE IF EXISTS T_DEPARTEMENT');
-            tx.executeSql('create table T_DEPARTEMENT ( ' +
+//            tx.executeSql('DROP TABLE IF EXISTS T_DEPARTEMENT');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS T_DEPARTEMENT ( ' +
                 'id                       INTEGER PRIMARY KEY AUTOINCREMENT,' +
                 'nom                      varchar2(50) not null,' +
                 'constraint uq_T_DEPARTEMENT_nom unique (nom))'
@@ -99,8 +98,8 @@ services.factory('WebSql', function ($log) {
 
         function T_FONCTION(tx) {
 
-            tx.executeSql('DROP TABLE IF EXISTS T_FONCTION');
-            tx.executeSql('create table T_FONCTION (' +
+//            tx.executeSql('DROP TABLE IF EXISTS T_FONCTION');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS T_FONCTION (' +
                 'id                       INTEGER PRIMARY KEY AUTOINCREMENT,' +
                 'nom                      varchar2(50) not null,' +
                 'constraint uq_T_FONCTION_nom unique (nom))'
@@ -150,10 +149,20 @@ services.factory('WebSql', function ($log) {
 
         function successCB() {
             console.log("success!");
-            deferred.resolve();
+
+            getAllEntity(entity).then(function(entities){
+                deferred.resolve(entities);
+            })
         }
 
         var tableName = 'T_'+entity.toUpperCase();
+
+        angular.forEach(rows, function (obj) {
+            for(key in obj){
+                var value = obj[key];
+                obj[key] = Utils.closeSingleQuotes(value);
+            }
+        });
 
         db.transaction(function (tx) {
             populateTabe(tx, tableName, rows)
@@ -163,8 +172,45 @@ services.factory('WebSql', function ($log) {
 
     }
 
+    function getAllEntity(entityType) {
+
+        var deferred = Q.defer();
+        var result = [];
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve(result);
+        }
+
+        function allEmployees(tx) {
+
+            function successCB(tx, res) {
+                for (var i=0; i<res.rows.length; i++){
+                    result.push(res.rows.item(i));
+                }
+            }
+
+            function errorCB(err) {
+                console.log("Error processing SQL: " + err.message);
+            }
+
+            tx.executeSql('SELECT *' +
+                ' FROM T_'+entityType.toUpperCase()
+                , [], successCB, errorCB);
+        }
+
+        db.transaction(allEmployees, errorCB, successCB);
+        return deferred.promise;
+    };
+
     return {
         initDB: initDB,
-        saveEntity: saveEntity
+        saveEntity: saveEntity,
+        getAllEntity: getAllEntity
     };
 });
