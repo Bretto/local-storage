@@ -1,6 +1,6 @@
 var services = angular.module('App.DataContext', []);
 
-services.factory('DataContext', function (EntityModel, jsonResultsAdapter) {
+services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataProvider, StorageProvider, $log) {
 
     breeze.config.initializeAdapterInstance("modelLibrary", "backingStore", true);
 
@@ -39,11 +39,44 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter) {
         return data.results
     }
 
-    function exportEmployees(employees){
+    function exportEmployees(employees) {
         return manager.exportEntities(employees)
     }
 
+    function createEntity(entityType, rows) {
+
+        var entities = [];
+
+        angular.forEach(rows, function (row) {
+            var newEntity = manager.createEntity(entityType, row);
+            newEntity.entityAspect.acceptChanges();
+            entities.push(newEntity);
+        });
+
+        return entities;
+    }
+
+    function getAllEntity(entityType) {
+
+        var deferred = Q.defer();
+
+        DataProvider['getAll' + entityType]()
+            .catch(function (err) {
+                $log.error('Error getAllEntity', err);
+                deferred.reject(new Error(err));
+            })
+            .done(function (res) {
+                var entities = createEntity(entityType, res);
+                deferred.resolve(entities);
+            })
+
+
+        return deferred.promise;
+
+    }
+
     return {
+        getAllEntity: getAllEntity,
         getFonctions: getFonctions,
         getEmployees: getEmployees,
         getDepartements: getDepartements,
@@ -51,4 +84,5 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter) {
         manager: manager
     };
 
-});
+})
+;

@@ -3,29 +3,31 @@
 
 var controllers = angular.module('App.controllers', []);
 
-controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, LocalStorage, WebService, DataContext) {
+controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, StorageProvider, DataProvider, DataContext) {
     $log.log('AppCtrl');
 
-    LocalStorage
-        .initDB()
-        .then(function () {
-            return WebService.getEmployees()
-        })
-        .then(function (employees) {
-            return LocalStorage.setT_EMPLOYEE(employees)
-        })
-        .then(function () {
-            return WebService.getDepartements()
-        })
-        .then(function (departements) {
-            return LocalStorage.setT_DEPARTEMENT(departements)
-        })
-        .then(function () {
-            return WebService.getFonctions()
-        })
-        .then(function (fonctions) {
-            return LocalStorage.setT_FONCTION(fonctions)
-        })
+    StorageProvider.initDB();
+
+//    LocalStorage
+//        .initDB()
+//        .then(function () {
+//            return WebService.getEmployees()
+//        })
+//        .then(function (employees) {
+//            return LocalStorage.setT_EMPLOYEE(employees)
+//        })
+//        .then(function () {
+//            return WebService.getDepartements()
+//        })
+//        .then(function (departements) {
+//            return LocalStorage.setT_DEPARTEMENT(departements)
+//        })
+//        .then(function () {
+//            return WebService.getFonctions()
+//        })
+//        .then(function (fonctions) {
+//            return LocalStorage.setT_FONCTION(fonctions)
+//        })
 //
 
     $scope.employees = null;
@@ -92,36 +94,43 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 //            employees.byId = filterEmployeesById(employees);
 //        })
 
-        LocalStorage.getAllEmployees()
-            .then(function (res) {
+//        LocalStorage.getAllEmployees()
+//            .then(function (res) {
+//
+//                angular.forEach(res, function (entity) {
+//                    var newEmp = DataContext.manager.createEntity('Employee', entity);
+//                    newEmp.entityAspect.acceptChanges();
+//                })
+//
+//                DataContext.getEmployees().then(function (res) {
+//
+//                    angular.forEach(res, function (entity) {
+//
+//                    });
+//
+//                    console.log(res);
+//                    $scope.employees = res;
+//                    $scope.$digest();
+//
+//                })
+//            });
 
-                angular.forEach(res, function (entity) {
-                    var newEmp = DataContext.manager.createEntity('Employee', entity);
-                    newEmp.entityAspect.acceptChanges();
-                })
-
-                DataContext.getEmployees().then(function (res) {
-
-                    angular.forEach(res, function (entity) {
-
-                    });
-
-                    console.log(res);
-                    $scope.employees = res;
-                    $scope.$digest();
-
-                })
-            });
+        DataContext.getAllEntity('Employee').then(function(res){
+            console.log(res);
+        });
     }
 
     $scope.onGetFonctions = function () {
-        DataContext.getFonctions().then(function (res) {
+        DataContext.getAllEntity('Fonction').then(function(res){
             console.log(res);
-            $scope.fonctions = res;
-            $scope.$digest();
-
-//            employees.byId = filterEmployeesById(employees);
-        })
+        });
+//        DataContext.getFonctions().then(function (res) {
+//            console.log(res);
+//            $scope.fonctions = res;
+//            $scope.$digest();
+//
+////            employees.byId = filterEmployeesById(employees);
+//        })
     }
 
     $scope.onExportEmployees = function () {
@@ -131,11 +140,14 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
 
     $scope.onGetDepartements = function () {
-        DataContext.getDepartements().then(function (res) {
+        DataContext.getAllEntity('Departement').then(function(res){
             console.log(res);
-            $scope.departements = res;
-            $scope.$digest();
-        })
+        });
+//        DataContext.getDepartements().then(function (res) {
+//            console.log(res);
+//            $scope.departements = res;
+//            $scope.$digest();
+//        })
     }
 
 

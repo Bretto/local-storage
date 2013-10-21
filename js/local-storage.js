@@ -35,18 +35,11 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
             .then(function () {
                 return createT_DEPARTEMENT();
             })
-            .then(function () {
-                return createT_DEPARTEMENT();
-            })
+
             .then(function () {
                 return createT_FONCTION();
             })
-            .then(function () {
-                return createT_FONCTION();
-            })
-//            .then(function () {
-//                return more();
-//            })
+
             .catch(function (err) {
                 $log.error('Error initDB', err);
                 deferred.reject(new Error(err));
@@ -60,31 +53,7 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
     }
 
 
-    var more = function(){
 
-        var deferred = Q.defer();
-
-        function errorCB(err) {
-            console.log("Error processing SQL: " + err.message);
-            deferred.reject(new Error(err));
-        }
-
-        function successCB() {
-            console.log("success!");
-            deferred.resolve();
-        }
-
-
-        function test(tx) {
-            tx.executeSql('alter table T_EMPLOYEE add constraint fk_T_EMPLOYEE_fonction_1 foreign key (fonction_id) references T_FONCTION (id) on delete restrict on update restrict');
-        };
-
-
-        db.transaction(test, errorCB, successCB);
-
-
-        return deferred.promise;
-    }
 
 
 
@@ -300,6 +269,31 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
     };
 
 
+    var saveEntity = function (entity, rows) {
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve();
+        }
+
+        var tableName = 'T_'+entity.toUpperCase();
+
+        db.transaction(function (tx) {
+            populateTabe(tx, tableName, rows)
+        }, errorCB, successCB);
+
+        return deferred.promise;
+
+    }
+
+
 
 
     return {
@@ -307,6 +301,7 @@ services.factory('LocalStorage', function ($http, $log, $rootScope, $sanitize) {
         setT_EMPLOYEE: setT_EMPLOYEE,
         setT_DEPARTEMENT: setT_DEPARTEMENT,
         setT_FONCTION: setT_FONCTION,
-        getAllEmployees: getAllEmployees
+        getAllEmployees: getAllEmployees,
+        saveEntity: saveEntity
     };
 });

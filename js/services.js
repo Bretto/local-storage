@@ -2,9 +2,10 @@
 
 var services = angular.module('App.services', []);
 
-services.value('STATES', {
-    online: true,
-    lockUI: false
+services.value('GLOBALS', {
+    MODE:'',
+    DB:'DB',
+    WS:'WS'
 });
 
 

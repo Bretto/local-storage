@@ -9,7 +9,6 @@ services.factory('WebService', function ($http, $log, $rootScope) {
         return str
     }
 
-
     var getEmployees = function () {
         $log.log('getEmployees');
         var deferred = Q.defer();
@@ -99,7 +98,43 @@ services.factory('WebService', function ($http, $log, $rootScope) {
         return deferred.promise;
     }
 
+    var getAllEmployee = function () {
+        $log.log('getAllEmployee');
+        var deferred = Q.defer();
+
+        $.getJSON('assets/employes.json')
+            .success(function (res) {
+                $log.log('getAllEmployee SUCCESS');
+
+                var employees = [];
+                angular.forEach(res.employes, function (employe) {
+                    var e = {
+                        id: employe.id,
+                        nom: addSingleQuotes(employe.nom),
+                        prenom: addSingleQuotes(employe.prenom),
+                        email: employe.email,
+                        adresse: addSingleQuotes(employe.adresse),
+                        fonction_id: employe.fonction_id,
+                        departement_id: employe.departement_id
+                    };
+
+                    employees.push(e);
+                });
+
+                deferred.resolve(employees);
+
+            })
+            .error(function (err) {
+                $log.log('getAllEmployee ERROR');
+                deferred.reject(new Error(err));
+            });
+
+        return deferred.promise;
+    }
+
+
     return {
+        getAllEmployee: getAllEmployee,
         getEmployees: getEmployees,
         getDepartements: getDepartements,
         getFonctions: getFonctions
