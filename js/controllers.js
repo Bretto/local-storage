@@ -178,8 +178,6 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 //
 //        var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
 //
-//
-//
 //        return obj;
 //    }
 
@@ -189,6 +187,17 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
             .then(function(){
 
         })
+    }
+
+    $scope.onCancel = function(activeItem){
+        activeItem.entityAspect.rejectChanges();
+    }
+
+    $scope.onDelete = function(activeItem){
+        DataContext.deleteEntity(activeItem)
+            .then(function(){
+
+            })
     }
 
 

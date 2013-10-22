@@ -1,3 +1,5 @@
+'use strict';
+
 var services = angular.module('App.WebSql', []);
 
 services.factory('WebSql', function ($log, Utils) {
@@ -158,7 +160,7 @@ services.factory('WebSql', function ($log, Utils) {
         var tableName = 'T_' + entity.toUpperCase();
 
         angular.forEach(rows, function (obj) {
-            for (key in obj) {
+            for (var key in obj) {
                 var value = obj[key];
                 obj[key] = Utils.closeSingleQuotes(value);
             }
@@ -178,60 +180,6 @@ services.factory('WebSql', function ($log, Utils) {
         var data = Utils.entityToJson(entity);
 
         var deferred = Q.defer();
-        var entityId = data.id;
-
-        function errorCB(err) {
-            console.log("Error processing SQL: " + err.message);
-            deferred.reject(new Error(err));
-        }
-
-        function successCB() {
-            console.log("success!");
-
-//            getEntityById(entity).then(function (entities) {
-//                deferred.resolve(entities);
-//            })
-        }
-
-        var tableName = 'T_' + entityType.toUpperCase();
-
-
-        for (key in data) {
-            var value = data[key];
-            data[key] = Utils.closeSingleQuotes(value);
-        }
-
-        db.transaction(function (tx) {
-
-            function successCB2(tx, res) {
-
-                for (var i = 0; i < res.rows.length; i++) {
-                    result.push(res.rows.item(i));
-                }
-            }
-
-            function errorCB2(err) {
-                console.log("Error processing SQL: " + err.message);
-            }
-
-
-            var keys = Object.keys(data).toString()
-
-            var values = [];
-            for (var key in data) {
-                values.push(data[key]);
-            }
-            values = "'" + values.join("','") + "'";
-            tx.executeSql('REPLACE INTO ' + tableName + ' (' + keys + ') VALUES (' + values + ')', [], successCB2, errorCB2);
-        }, errorCB, successCB);
-
-        return deferred.promise;
-
-    }
-
-    function getAllEntity(entityType) {
-
-        var deferred = Q.defer();
         var result = [];
 
         function errorCB(err) {
@@ -244,7 +192,102 @@ services.factory('WebSql', function ($log, Utils) {
             deferred.resolve(result);
         }
 
-        function allEmployees(tx) {
+        var tableName = 'T_' + entityType.toUpperCase();
+
+
+        for (var key in data) {
+            var value = data[key];
+            data[key] = Utils.closeSingleQuotes(value);
+        }
+
+
+        function replaceIntoTable(tx) {
+
+            function successCB(tx, res) {
+                for (var i = 0; i < res.rows.length; i++) {
+                    result.push(res.rows.item(i));
+                }
+            }
+
+            function errorCB(err) {
+                console.log("Error processing SQL: " + err.message);
+            }
+
+            var keys = Object.keys(data).toString()
+
+            var values = [];
+            for (var key in data) {
+                values.push(data[key]);
+            }
+            values = "'" + values.join("','") + "'";
+
+            tx.executeSql('REPLACE INTO ' + tableName + ' (' + keys + ') VALUES (' + values + ')',
+                [], successCB, errorCB);
+        }
+
+        db.transaction(replaceIntoTable, errorCB, successCB);
+        return deferred.promise;
+
+    }
+
+    var deleteEntity = function (entity) {
+
+        var entityType = entity.entityType.shortName;
+        var tableName = 'T_' + entityType.toUpperCase();
+        var entityId = entity.id;
+
+        var deferred = Q.defer();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve(result);
+        }
+
+
+        function deleteFromTable(tx) {
+
+            function successCB(tx, res) {
+                console.log("success!");
+            }
+
+            function errorCB(err) {
+                console.log("Error processing SQL: " + err.message);
+            }
+
+            tx.executeSql('DELETE' +
+                ' FROM ' + tableName +
+                ' WHERE id = ?',
+            [entityId], successCB, errorCB);
+        }
+
+        db.transaction(deleteFromTable, errorCB, successCB);
+        return deferred.promise;
+
+    }
+
+
+    function getAllEntity(entityType) {
+
+        var deferred = Q.defer();
+        var result = [];
+        var tableName = 'T_' + entityType.toUpperCase();
+
+        function errorCB(err) {
+            console.log("Error processing SQL: " + err.message);
+            deferred.reject(new Error(err));
+        }
+
+        function successCB() {
+            console.log("success!");
+            deferred.resolve(result);
+        }
+
+        function selectAllFromTable(tx) {
 
             function successCB(tx, res) {
                 for (var i = 0; i < res.rows.length; i++) {
@@ -257,17 +300,18 @@ services.factory('WebSql', function ($log, Utils) {
             }
 
             tx.executeSql('SELECT *' +
-                ' FROM T_' + entityType.toUpperCase()
+                ' FROM ' + tableName
                 , [], successCB, errorCB);
         }
 
-        db.transaction(allEmployees, errorCB, successCB);
+        db.transaction(selectAllFromTable, errorCB, successCB);
         return deferred.promise;
     };
 
     return {
         initDB: initDB,
         saveEntity: saveEntity,
+        deleteEntity: deleteEntity,
         saveEntityBatch: saveEntityBatch,
         getAllEntity: getAllEntity
     };

@@ -101,8 +101,10 @@
                         <button class="btn btn-default"
                                 ng-disabled="form.$invalid || isUnchanged(activeItem)"
                                 data-ng-click="onSave(activeItem)">Save</button>
-                        <button class="btn btn-default">Cancel</button>
-                        <button class="btn btn-default">Delete</button>
+                        <button class="btn btn-default"
+                                data-ng-click="onCancel(activeItem)">Cancel</button>
+                        <button class="btn btn-default"
+                                data-ng-click="onDelete(activeItem)">Delete</button>
                     </div>
                 </div>
             </form>
@@ -128,8 +130,10 @@
 <script src="js/services.js"></script>
 <!--<script src="js/local-storage.js"></script>-->
 <script src="js/storage-provider.js"></script>
+<script src="js/breeze-storage.js"></script>
 <script src="js/web-service.js"></script>
 <script src="js/web-sql.js"></script>
 <script src="js/mock-service.js"></script>
+<script src="js/mock-service-breeze.js"></script>
 </body>
 </html>

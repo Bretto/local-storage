@@ -1,3 +1,5 @@
+'use strict';
+
 var services = angular.module('App.Utils', []);
 
 services.factory('Utils', function () {

@@ -11,9 +11,11 @@ angular.module('App', [
     'App.filters',
     'App.services',
     'App.WebSql',
+    'App.BreezeStorage',
     'App.StorageProvider',
     'App.WebService',
     'App.MockService',
+    'App.MockServiceBreeze',
     'ngSanitize',
     'App.directives',
     'breeze.directives'

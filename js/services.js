@@ -3,9 +3,11 @@
 var services = angular.module('App.services', []);
 
 services.value('GLOBALS', {
-    MODE:'DB',
+    MODE:'MOCK_BREEZE',
     DB:'DB',
-    WS:'WS'
+    WS:'WS',
+    MOCK_BREEZE: 'MOCK_BREEZE',
+    MOCK: 'MOCK'
 });
 
 

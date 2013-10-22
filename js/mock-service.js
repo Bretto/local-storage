@@ -1,3 +1,6 @@
+'use strict';
+
+
 var services = angular.module('App.MockService', []);
 
 services.factory('MockService', function (Utils, $log, StorageProvider) {

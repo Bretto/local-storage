@@ -1,3 +1,6 @@
+'use strict';
+
+
 var services = angular.module('App.StorageProvider', []);
 
 services.factory('StorageProvider', function (WebSql, GLOBALS) {

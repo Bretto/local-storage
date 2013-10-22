@@ -1,3 +1,6 @@
+'use strict';
+
+
 var services = angular.module('App.DataContext', []);
 
 services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataProvider, StorageProvider, $log) {
@@ -42,20 +45,39 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
 
         var deferred = Q.defer();
 
-        DataProvider.getAllEntity(entityType)
+        DataProvider.getAllEntity(entityType, manager)
             .catch(function (err) {
                 $log.error('Error getAllEntity', err);
                 deferred.reject(new Error(err));
             })
             .done(function (res) {
-                var entities = createEntity(entityType, res);
-                deferred.resolve(entities);
+                deferred.resolve(res);
             })
 
 
         return deferred.promise;
 
     }
+
+
+//    function getAllEntity(entityType) {
+//
+//        var deferred = Q.defer();
+//
+//        DataProvider.getAllEntity(entityType)
+//            .catch(function (err) {
+//                $log.error('Error getAllEntity', err);
+//                deferred.reject(new Error(err));
+//            })
+//            .done(function (res) {
+//                var entities = createEntity(entityType, res);
+//                deferred.resolve(entities);
+//            })
+//
+//
+//        return deferred.promise;
+//
+//    }
 
     function saveEntity(entity) {
 
@@ -71,6 +93,23 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
                 deferred.resolve(entities);
             })
 
+        return deferred.promise;
+
+    }
+
+    function deleteEntity(entity) {
+
+        var deferred = Q.defer();
+
+        StorageProvider.deleteEntity(entity)
+            .catch(function (err) {
+                $log.error('Error deleteEntity', err);
+                deferred.reject(new Error(err));
+            })
+            .done(function (res) {
+
+                deferred.resolve(res);
+            })
 
         return deferred.promise;
 
@@ -80,6 +119,7 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
         exportEmployees: exportEmployees,
         getAllEntity: getAllEntity,
         saveEntity:saveEntity,
+        deleteEntity:deleteEntity,
         manager: manager
     };
 
