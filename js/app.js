@@ -32,6 +32,34 @@ function configDirective(cfg) {
 
 
 
+//    XMLHttpRequest.prototype.realOpen = XMLHttpRequest.prototype.open;
+//    var newOpen = function(method, url, async, user, password) {
+//
+//        var index = url.lastIndexOf('/');
+//        var str = url.substr(index);
+//
+//        if(str === '/SaveChanges'){
+//            console.log("Intercepted open (" + str + ")");
+//        }
+//        this.realOpen(method, url, async, user, password);
+//    }
+//    XMLHttpRequest.prototype.open = newOpen;
+
+//    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+//        var success = options.success;
+//        options.success = function(data, textStatus, jqXHR) {
+//            // override success handling
+//            console.log("Intercepted open (" + textStatus + ")");
+//            if(typeof(success) === "function") return success(data, textStatus, jqXHR);
+//        };
+//        var error = options.error;
+//        options.error = function(jqXHR, textStatus, errorThrown) {
+//            // override error handling
+//            console.log("Intercepted open (" + textStatus + ")");
+//            if(typeof(error) === "function") return error(jqXHR, textStatus, errorThrown);
+//        };
+//    });
+
 
 
 

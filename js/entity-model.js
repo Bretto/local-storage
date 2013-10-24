@@ -12,6 +12,7 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
 
     function initialize(metadataStore) {
 
+
         metadataStore.addEntityType({
             shortName: "Employee",
             namespace: "Context",
@@ -27,24 +28,24 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
                 },
                 prenom:         {
                     dataType: DT.String,
-                    validators:[
-                        Validator.required(),
-                        Validator.maxLength({maxLength: 20})
-                    ]
+//                    validators:[
+//                        Validator.required(),
+//                        Validator.maxLength({maxLength: 20})
+//                    ]
                 },
                 email:          {
                     dataType: DT.String,
-                    validators:[
-                        Validator.required(),
-                        Validator.emailAddress()
-                    ]
+//                    validators:[
+//                        Validator.required()
+//                        Validator.emailAddress()
+//                    ]
                 },
                 adresse:        {
                     dataType: DT.String,
-                    validators:[
-                        Validator.required(),
-                        Validator.maxLength({maxLength: 50})
-                    ]
+//                    validators:[
+//                        Validator.required(),
+//                        Validator.maxLength({maxLength: 50})
+//                    ]
                 },
                 departement_id: { dataType: DT.Int64 },
                 fonction_id:    { dataType: DT.Int64 }
@@ -60,6 +61,23 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
                 }
             }
         });
+
+        metadataStore.setEntityTypeForResourceName('Employee', 'Employee');
+
+        function Employee() {
+
+        }
+
+        var employeeInitializer = function(employee){
+
+            $rootScope.$watch(function(){return employee.entityAspect.entityState.name}, function(value){
+                if(employee.id < 0){
+                    employee.entityAspect.hasTempKey = true;
+                }
+            })
+        }
+
+        metadataStore.registerEntityTypeCtor("Employee", Employee, employeeInitializer);
 
         metadataStore.addEntityType({
             shortName: "Departement",
@@ -83,6 +101,8 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
             }
         });
 
+        metadataStore.setEntityTypeForResourceName('Departement', 'Departement');
+
         metadataStore.addEntityType({
             shortName: "Fonction",
             namespace: "Context",
@@ -97,6 +117,8 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
                 }
             }
         });
+
+        metadataStore.setEntityTypeForResourceName('Fonction', 'Fonction');
 
         detectRequired(metadataStore);
 

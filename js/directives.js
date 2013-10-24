@@ -206,7 +206,7 @@ directives.directive('autoFocus', function ($timeout) {
 directives.directive('formField', function ($log, $compile) {
 
     function link(scope, element, attrs, ctrl) {
-        console.log('ok');
+//        console.log('ok');
     }
 
     return {

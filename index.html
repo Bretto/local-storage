@@ -14,6 +14,8 @@
     <button class="btn" data-ng-click="onGetFonctions()">Get fonction</button>
     <button class="btn" data-ng-click="onGetEmployees()">Get employees</button>
     <button class="btn" data-ng-click="onGetDepartements()">Get departements</button>
+    <button class="btn" data-ng-click="onGetEntityGraph()">Get Entity Graph</button>
+    <button class="btn" data-ng-click="onSetEntityGraph()">Set Entity Graph</button>
     <!--<button class="btn" data-ng-click="onExportEmployees()">Export Employees</button>-->
 </div>
 
@@ -93,6 +95,7 @@
     <div class="col-md-12">
         <div class="well">
             <form novalidate name="form" class="form-horizontal">
+                {{activeItem.entityAspect.entityState.name}}
                 <div data-ng-repeat="formField in formData">
                     <div form-field ></div>
                 </div>
