@@ -66,15 +66,32 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
 
         function Employee() {
 
+
         }
+
+//        Employee.entityAspect.prototype.hasTempKey = function() {
+//            return (this.id < 0)? true:false;
+//        };
 
         var employeeInitializer = function(employee){
 
-            $rootScope.$watch(function(){return employee.entityAspect.entityState.name}, function(value){
-                if(employee.id < 0){
-                    employee.entityAspect.hasTempKey = true;
-                }
-            })
+//            employee.entityAspect.hasTempKey = function(){
+//                return (employee.id < 0)? true:false;
+//            }
+
+//            Object.defineProperty(employee.entityAspect, "hasTempKey", {get : function(){ (employee.id < 0)? true:false; }});
+
+
+//            employee.entityAspect.hasTempKey = function() {
+//                return (this.id < 0)? true:false;
+//            };
+
+
+//            $rootScope.$watch(function(){return employee.entityAspect.entityState.name}, function(value){
+//                if(employee.id < 0){
+//                    employee.entityAspect.hasTempKey = true;
+//                }
+//            })
         }
 
         metadataStore.registerEntityTypeCtor("Employee", Employee, employeeInitializer);

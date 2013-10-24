@@ -34,17 +34,20 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     $scope.departements = null;
     $scope.fonctions = null;
 
-//    $scope.formData = [{label:"Nom", type:"text", key:'nom'}, {label:"Email", type:"email", key:'email'}];
-
-
     $scope.isActive = function (item) {
         return this.activeItem === item;
     }
 
     $scope.onSelect = function (item) {
+
+
+        if ($scope.activeItem) {
+            if ($scope.activeItem.entityAspect.entityState.name !== 'Detached') {
+                $scope.activeItem.entityAspect.rejectChanges();
+            }
+
+        }
         $scope.activeItem = item;
-
-
 
         var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
         var formData = [];
@@ -55,74 +58,22 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         }
 
         $scope.formData = formData;
-//        $scope.$digest();
     }
 
     $scope.onAddEmployee = function () {
 
+//        if(!$scope.activeItem){
+        var newEmp = DataContext.manager.createEntity('Employee', {});
+        $scope.onSelect(newEmp);
+//        }
 
-
-        if(!$scope.activeItem){
-            var newEmp = DataContext.manager.createEntity('Employee', {});
-            $scope.onSelect(newEmp);
-        }
-
-        if($scope.activeItem.entityAspect.entityState.name !== 'Added'){
-            var newEmp = DataContext.manager.createEntity('Employee', {});
-            $scope.onSelect(newEmp);
-        }
-    }
-
-
-    function createEntity(entityName) {
-        var entityType = DataContext.manager.metadataStore.getEntityType(entityName);
-        var entity = entityType.createEntity({});
-        return entity;
-    };
-
-
-    $scope.onSelectAll = function () {
-        LocalStorage.getAllEmployees()
-            .then(function (employees) {
-                console.log(employees);
-            })
-    }
-
-    $scope.onSelectEmployee = function () {
-        var emp = employees.byId(1);
-        console.log(emp);
+//        if($scope.activeItem.entityAspect.entityState.name !== 'Added'){
+//            var newEmp = DataContext.manager.createEntity('Employee', {});
+//            $scope.onSelect(newEmp);
+//        }
     }
 
     $scope.onGetEmployees = function () {
-//        DataContext.getEmployees().then(function(res){
-//            console.log(res);
-//            $scope.employees = res;
-//            $scope.$digest();
-
-//            employees.byId = filterEmployeesById(employees);
-//        })
-
-//        LocalStorage.getAllEmployees()
-//            .then(function (res) {
-//
-//                angular.forEach(res, function (entity) {
-//                    var newEmp = DataContext.manager.createEntity('Employee', entity);
-//                    newEmp.entityAspect.acceptChanges();
-//                })
-//
-//                DataContext.getEmployees().then(function (res) {
-//
-//                    angular.forEach(res, function (entity) {
-//
-//                    });
-//
-//                    console.log(res);
-//                    $scope.employees = res;
-//                    $scope.$digest();
-//
-//                })
-//            });
-
         DataContext.getAllEntity('Employee')
             .then(function (res) {
                 console.log(res);
@@ -138,18 +89,6 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
                 $scope.fonctions = res;
                 $scope.$digest();
             });
-//        DataContext.getFonctions().then(function (res) {
-//            console.log(res);
-//            $scope.fonctions = res;
-//            $scope.$digest();
-//
-////            employees.byId = filterEmployeesById(employees);
-//        })
-    }
-
-    $scope.onExportEmployees = function () {
-        var exportEmployees = DataContext.exportEmployees(employees);
-        console.log(exportEmployees);
     }
 
 
@@ -160,19 +99,10 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
                 $scope.departements = res;
                 $scope.$digest();
             });
-//        DataContext.getDepartements().then(function (res) {
-//            console.log(res);
-//            $scope.departements = res;
-//            $scope.$digest();
-//        })
     }
 
 
     $scope.isUnchanged = function (activeItem) {
-
-//        console.log('state:', activeItem.entityAspect.entityState.name);
-//        console.log('originaleVals:', activeItem.entityAspect.originalValues);
-//        angular.equals(activeItem, $scope.originActiveItem);
 
         if (!activeItem)return;
         var state = activeItem.entityAspect.entityState;
@@ -181,37 +111,13 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     };
 
 
-//    function getSimpleObject(entity){
-//
-//        var obj = {};
-//
-//        var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
-//
-//        return obj;
-//    }
-
     function resetForm() {
         $scope.formData = null;
         $scope.activeItem = null;
     }
 
 
-
     $scope.onSave = function (activeItem) {
-
-//        $timeout(function(){},0)
-//        resetForm();
-//        $scope.$digest();
-
-//        var query = new breeze.EntityQuery('Employee')
-//        $scope.employees = DataContext.manager.executeQueryLocally(query);
-//
-//        var exportData = DataContext.manager.exportEntities();
-//        BreezeStorage.setEntityGraph(exportData);
-//        DataContext.manager.addEntity(activeItem);
-//        DataContext.manager.saveChanges();
-
-
         activeItem.entityAspect.setUnchanged();
         exportChanges();
         resetForm();
@@ -219,66 +125,31 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     }
 
     $scope.onCancel = function (activeItem) {
-
-//        console.log('entityState:', activeItem.entityAspect.entityState);
-//        activeItem.entityAspect.rejectChanges();
-//        resetForm();
-
-//        if(activeItem.entityAspect.entityState.name === 'Modified'){
-            activeItem.entityAspect.rejectChanges();
-//        }else if(activeItem.entityAspect.entityState.name === 'Added'){
-
-//        }
-// else{
-
-//        }
-//            resetForm();
+        activeItem.entityAspect.rejectChanges();
     }
 
     $scope.onDelete = function (activeItem) {
 
-        if(activeItem.entityAspect.hasTempKey){
+        if (activeItem.id < 0) {
             console.log('setDetached');
             activeItem.entityAspect.setDetached();
-        }else{
+        } else {
             console.log('setDeleted');
             activeItem.entityAspect.setDeleted();
         }
 
         exportChanges();
-//        resetForm();
+        resetForm();
         $scope.onGetEntityGraph();
     }
 
     function exportChanges() {
-//        DataContext.manager.saveChanges();
-
-
-//        var keyMappings = data.KeyMappings.map(function(km) {
-//            var entityTypeName = MetadataStore.normalizeTypeName(km.EntityTypeName);
-//            return { entityTypeName: entityTypeName, tempValue: km.TempValue, realValue: km.RealValue };
-//        });
-//        var saveResult = { entities: data.Entities, keyMappings: keyMappings, XHR: data.XHR };
-//        deferred.resolve(saveResult);
-
-//        private int AddMapping(Type type, int tempId)
-//        {
-//            var newId = IdGenerator.Instance.GetNextId(type);
-//            _keyMappings.Add(new KeyMapping
-//            {
-//                EntityTypeName = type.FullName,
-//                    RealValue = newId,
-//                    TempValue = tempId
-//            });
-//            return newId;
-//        }
-
 
         var entities = DataContext.manager.getEntities();
-        angular.forEach(entities, function(entity){
+        angular.forEach(entities, function (entity) {
 
-            if(entity.id < 0){
-//                entity.entityAspect.hasTempKey = true;
+            if (entity.id < 0) {
+                entity.entityAspect.hasTempKey = true;
             }
 
         });
@@ -287,45 +158,27 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
 
         var exportData = DataContext.manager.exportEntities();
+
+        var data = JSON.parse(exportData);
+        data.dataService.serviceName = "http://localhost:3000";
+        exportData = JSON.stringify(data);
+
         BreezeStorage.setEntityGraph(exportData);
 
     }
 
-    function doIt(){
+    function doIt() {
 
-        $timeout(function(){
         var entities = DataContext.manager.getEntities();
-        angular.forEach(entities, function(entity){
-            if(entity.entityAspect.hasTempKey){
-                console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name )
+        angular.forEach(entities, function (entity) {
+            if (entity.id < 0) {
+                console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name);
             }
         });
-        },100);
-
-//        var deferred = Q.defer();
-//
-//        $timeout(function(){
-//            var entities = DataContext.manager.getEntities();
-//            var keyMappings = [];
-//            angular.forEach(entities, function(entity){
-//                if(entity.id < 0){
-//                    keyMappings.push({
-//                        entityTypeName: entity.entityType.name,
-//                        realValue: entity.id + 100,
-//                        tempValue: entity.id
-//                    })
-//                }
-//            });
-//
-//            var res = { entities: entities, keyMappings: keyMappings};
-//            deferred.resolve(res);
-//
-//        },1000)
-//
-//        return deferred.promise;
+        console.log('');
     }
 
-    function updateUI(){
+    function updateUI() {
         var query = new breeze.EntityQuery('Employee')
         $scope.employees = DataContext.manager.executeQueryLocally(query);
 
@@ -336,49 +189,46 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         $scope.fonctions = DataContext.manager.executeQueryLocally(query);
     }
 
-//    DataContext.manager.importEntities(importData)
-//    Object {entities: Array[17], tempKeyMapping: Object}
-
     $scope.onGetEntityGraph = function () {
 
-
-//        DataContext.manager.clear();
         var importData = BreezeStorage.getEntityGraph();
-
-
 
         DataContext.manager.importEntities(importData, {mergeStrategy: breeze.MergeStrategy.OverwriteChanges});
 
         var entities = DataContext.manager.getEntities();
-        angular.forEach(entities, function(entity){
-
-            if(entity.id < 0){
-//                entity.entityAspect.hasTempKey = true;
-            }
-
-        });
 
         doIt();
 
-
-//        DataContext.manager.clear();
-//        var entities = DataContext.manager.importEntities(importData, {mergeStrategy: breeze.MergeStrategy.OverwriteChanges}).entities;
-
-        // fix the disaperering hasTempKey after the manager.clear()
-//        angular.forEach(entities, function (entity) {
-//            if (entity.id < 0) {
-//                entity.entityAspect.hasTempKey = true;
-//            }
-//        });
-
         updateUI();
-
-//        console.log(DataContext.manager.importEntities(importData));
-//        DataContext.manager.keyGenerator.getTempKeys()
     }
 
     $scope.onSetEntityGraph = function () {
         exportChanges();
+    }
+
+
+
+    $scope.onSaveEntityGraph = function () {
+
+
+        var entities = DataContext.manager.getEntities();
+        angular.forEach(entities, function (entity) {
+
+            if (entity.id < 0) {
+                entity.entityAspect.hasTempKey = true;
+                entity.entityAspect.setModified();
+            }
+        });
+
+//        var so = new breeze.SaveOptions({ resourceName: "http://localhost:3000/SaveChanges" });
+        // listOfEntities may be null in which case all added/modified/deleted entities will be sent
+        DataContext.manager.saveChanges().fin(function(){
+            //$scope.$digest();
+            exportChanges();
+            updateUI();
+            $scope.$digest();
+        })
+
     }
 
 

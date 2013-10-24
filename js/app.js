@@ -61,6 +61,29 @@ function configDirective(cfg) {
 //    });
 
 
+//        var deferred = Q.defer();
+//
+//        $timeout(function(){
+//            var entities = DataContext.manager.getEntities();
+//            var keyMappings = [];
+//            angular.forEach(entities, function(entity){
+//                if(entity.id < 0){
+//                    keyMappings.push({
+//                        entityTypeName: entity.entityType.name,
+//                        realValue: entity.id + 100,
+//                        tempValue: entity.id
+//                    })
+//                }
+//            });
+//
+//            var res = { entities: entities, keyMappings: keyMappings};
+//            deferred.resolve(res);
+//
+//        },1000)
+//
+//        return deferred.promise;
+
+
 
 
 
