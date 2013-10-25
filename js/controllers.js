@@ -171,9 +171,9 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
         var entities = DataContext.manager.getEntities();
         angular.forEach(entities, function (entity) {
-            if (entity.id < 0) {
+//            if (entity.id < 0) {
                 console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name);
-            }
+//            }
         });
         console.log('');
     }
@@ -210,6 +210,8 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
     $scope.onSaveEntityGraph = function () {
 
+        doIt();
+
 
         var entities = DataContext.manager.getEntities();
         angular.forEach(entities, function (entity) {
@@ -222,12 +224,33 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
 //        var so = new breeze.SaveOptions({ resourceName: "http://localhost:3000/SaveChanges" });
         // listOfEntities may be null in which case all added/modified/deleted entities will be sent
-        DataContext.manager.saveChanges().fin(function(){
+//        DataContext.manager.saveChanges().fin(function(){
             //$scope.$digest();
+//            exportChanges();
+//            updateUI();
+//            $scope.$digest();
+//        })
+
+        DataContext.manager.saveChanges().then(function(data){
+            //$scope.$digest();
+//            exportChanges();
+//            console.log('data:', data);
+//            updateUI();
+            angular.forEach(entities, function (entity) {
+                if (entity.entityAspect.entityState.isDeleted()) {
+                    DataContext.manager.detachEntity(entity);
+                } else {
+                    entity.entityAspect.acceptChanges();
+                }
+            });
+
             exportChanges();
-            updateUI();
             $scope.$digest();
-        })
+
+
+        }).fail(function(err){
+                console.log('err:', err);
+            })
 
     }
 

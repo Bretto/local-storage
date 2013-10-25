@@ -8,6 +8,7 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
     breeze.config.initializeAdapterInstance("modelLibrary", "backingStore", true);
 
     var serviceName = "http://localhost/~Separ8/local-storage";
+//    var serviceName = "http://localhost:3000";
 
     var ds = new breeze.DataService({
         serviceName: serviceName,

@@ -27,6 +27,8 @@ services.value('jsonResultsAdapter',
             }else if(str === '/fonctions.json'){
                 return {entityType: "Fonction"}
             }
+
+//            return { entityType: "Employee"  }
         }
 
     }));
