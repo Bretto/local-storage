@@ -16,7 +16,7 @@ angular.module('App', [
     'App.WebService',
     'App.MockService',
     'App.MockServiceBreeze',
-    'ngSanitize',
+//    'ngSanitize',
     'App.directives',
     'breeze.directives'
 ]).config(['zDirectivesConfigProvider', configDirective]);

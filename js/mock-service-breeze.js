@@ -47,13 +47,13 @@ services.factory('MockServiceBreeze', function (Utils, $log) {
 
     function getAllDepartement() {
         var query = breeze.EntityQuery
-            .from("assets/fonctions.json");
+            .from("assets/departements.json");
         return manager.executeQuery(query).then(returnResults);
     }
 
     function getAllFonction() {
         var query = breeze.EntityQuery
-            .from("/assets/departements.json")
+            .from("/assets/fonctions.json")
         return manager.executeQuery(query).then(returnResults);
     }
 

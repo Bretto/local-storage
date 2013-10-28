@@ -61,16 +61,18 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     }
 
     $scope.onAddEmployee = function () {
+        var newEntity = DataContext.manager.createEntity('Employee', {});
+        $scope.onSelect(newEntity);
+    }
 
-//        if(!$scope.activeItem){
-        var newEmp = DataContext.manager.createEntity('Employee', {});
-        $scope.onSelect(newEmp);
-//        }
+    $scope.onAddFonction = function () {
+        var newEntity = DataContext.manager.createEntity('Fonction', {});
+        $scope.onSelect(newEntity);
+    }
 
-//        if($scope.activeItem.entityAspect.entityState.name !== 'Added'){
-//            var newEmp = DataContext.manager.createEntity('Employee', {});
-//            $scope.onSelect(newEmp);
-//        }
+    $scope.onAddDepartement = function () {
+        var newEntity = DataContext.manager.createEntity('Departement', {});
+        $scope.onSelect(newEntity);
     }
 
     $scope.onGetEmployees = function () {
@@ -172,7 +174,8 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         var entities = DataContext.manager.getEntities();
         angular.forEach(entities, function (entity) {
 //            if (entity.id < 0) {
-                console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name);
+                console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name, 'hasTempId:', entity.entityAspect.hasTempKey);
+
 //            }
         });
         console.log('');
