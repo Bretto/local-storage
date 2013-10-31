@@ -3,17 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="59b94600-2902-45b7-993e-d39edd69eae5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/breeze-directives.js" afterPath="$PROJECT_DIR$/libs/breeze-directives.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/entity-model.js" afterPath="$PROJECT_DIR$/js/entity-model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/directives.js" afterPath="$PROJECT_DIR$/js/directives.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/mock-service-breeze.js" afterPath="$PROJECT_DIR$/js/mock-service-breeze.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/utils.js" afterPath="$PROJECT_DIR$/js/utils.js" />
     </list>
     <ignored path="JsonEditor.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382912150925" ignored="false" />
-    <file path="/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382929434864" ignored="false" />
-    <file path="/controllers.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382929368694" ignored="false" />
-    <file path="/directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381813370236" ignored="false" />
+    <file path="/Dummy.txt" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383175024956" ignored="false" />
+    <file path="/index.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383174699145" ignored="false" />
+    <file path="/controllers.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383186278983" ignored="false" />
+    <file path="/directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383185795391" ignored="false" />
     <file path="/node-data.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381124700630" ignored="false" />
     <file path="/node-editor.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381052902962" ignored="false" />
     <file path="/screen.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382262371645" ignored="false" />
@@ -21,7 +22,7 @@
     <file path="/node-item.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381105556856" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/synchro.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381198103212" ignored="false" />
     <file path="/synchro.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381198092924" ignored="false" />
-    <file path="/a.dummy" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382596585358" ignored="false" />
+    <file path="/a.dummy" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383039532612" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/admin.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381203814151" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/home.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381286022767" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/web-service.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381203829902" ignored="false" />
@@ -62,7 +63,7 @@
     <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/assets/www/config.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/platforms/android/res/values/strings.xml" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879565168" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381880310623" ignored="false" />
-    <file path="/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382591497309" ignored="false" />
+    <file path="/app.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383101280220" ignored="false" />
     <file path="$PROJECT_DIR$/../releve-de-prix/www/sass/base.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381364708610" ignored="false" />
     <file path="/base.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381364197238" ignored="false" />
     <file path="/local-storage.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382311943813" ignored="false" />
@@ -100,13 +101,13 @@
     <file path="$PROJECT_DIR$/../releve-de-prix/www/js/main.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382915510484" ignored="false" />
     <file path="/main.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1381879406506" ignored="false" />
     <file path="/form-field.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382075535983" ignored="false" />
-    <file path="/breeze-directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382076554166" ignored="false" />
+    <file path="/breeze-directives.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383097996850" ignored="false" />
     <file path="$PROJECT_DIR$/../JsonEditor/index2.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382262491142" ignored="false" />
     <file path="/index2.html" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382262490087" ignored="false" />
     <file path="$PROJECT_DIR$/../JsonEditor/sass/screen.scss" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382262373350" ignored="false" />
     <file path="$PROJECT_DIR$/../JsonEditor/stylesheets/screen.css" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382262484213" ignored="false" />
     <file path="/data-provider.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382399603128" ignored="false" />
-    <file path="/utils.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382338821815" ignored="false" />
+    <file path="/utils.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383099313938" ignored="false" />
     <file path="/mock.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382323305436" ignored="false" />
     <file path="/storage-provider.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382312663105" ignored="false" />
     <file path="/web-sql.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382396047094" ignored="false" />
@@ -114,6 +115,11 @@
     <file path="/breeze-storage.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382397878675" ignored="false" />
     <file path="/mock-service-breeze.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382669336374" ignored="false" />
     <file path="$PROJECT_DIR$/../chat-box/node.log" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382657646863" ignored="false" />
+    <file path="$PROJECT_DIR$/../Zza-Node-Mongo/routes.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383001659689" ignored="false" />
+    <file path="/fragment.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1382999419461" ignored="false" />
+    <file path="/Log-decorator.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383018121867" ignored="false" />
+    <file path="/log-decorator.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383101792690" ignored="false" />
+    <file path="/log-enhancer.js" changelist="59b94600-2902-45b7-993e-d39edd69eae5" time="1383088759189" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,10 +139,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="53" selection-start="2982" selection-end="2982" vertical-scroll-proportion="-24.875">
+            <state line="29" column="23" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.35928145">
               <folding />
             </state>
           </provider>
@@ -145,7 +151,52 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="241" column="57" selection-start="6732" selection-end="6732" vertical-scroll-proportion="0.0">
+            <state line="255" column="32" selection-start="6971" selection-end="6971" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mock-service.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/mock-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="32" selection-start="1430" selection-end="1454" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log-decorator.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/log-decorator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="137" column="0" selection-start="5582" selection-end="5582" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data-provider.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/data-provider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="27" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directives.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/directives.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="246" column="11" selection-start="6177" selection-end="6177" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="19" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,66 +211,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entity-model.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/entity-model.js">
+      <file leaf-file-name="breeze-directives.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/breeze-directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="56" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
+            <state line="19" column="14" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="breeze.debug.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/breeze.debug.js">
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8016" column="4" selection-start="295270" selection-end="295270" vertical-scroll-proportion="4.2909093">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data-provider.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/data-provider.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datacontext.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/datacontext.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="6" selection-start="3101" selection-end="3285" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mock-service-breeze.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/mock-service-breeze.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="38" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.3128655">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="19" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-field.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/form-field.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="6" selection-start="407" selection-end="407" vertical-scroll-proportion="-4.375">
+            <state line="34" column="0" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -243,22 +247,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/local-storage.js" />
-        <option value="$PROJECT_DIR$/js/mock-service.js" />
-        <option value="$PROJECT_DIR$/js/storage-provider.js" />
-        <option value="$PROJECT_DIR$/js/utils.js" />
-        <option value="$PROJECT_DIR$/js/web-sql.js" />
-        <option value="$PROJECT_DIR$/js/breeze-storage.js" />
-        <option value="$PROJECT_DIR$/js/data-provider.js" />
-        <option value="$PROJECT_DIR$/js/directives.js" />
-        <option value="$PROJECT_DIR$/libs/breeze.debug.js" />
         <option value="$PROJECT_DIR$/js/services.js" />
         <option value="$PROJECT_DIR$/js/datacontext.js" />
-        <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/entity-model.js" />
         <option value="$PROJECT_DIR$/js/mock-service-breeze.js" />
+        <option value="$PROJECT_DIR$/js/Log-decorator.js" />
+        <option value="$PROJECT_DIR$/js/supplant.js" />
+        <option value="$PROJECT_DIR$/js/date-time.js" />
+        <option value="$PROJECT_DIR$/js/browser-detect.js" />
+        <option value="$PROJECT_DIR$/libs/breeze-directives.js" />
+        <option value="$PROJECT_DIR$/js/log-enhancer.js" />
+        <option value="$PROJECT_DIR$/js/utils.js" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/log-decorator.js" />
+        <option value="$PROJECT_DIR$/js/directives.js" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -310,6 +314,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="local-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local-storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -534,51 +552,32 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/breeze-directives.js">
+    <entry file="file://$PROJECT_DIR$/libs/breeze.debug.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="432" selection-end="433" vertical-scroll-proportion="0.23171988">
+        <state line="8016" column="4" selection-start="295270" selection-end="295270" vertical-scroll-proportion="-0.24634655">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/datacontext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="2" selection-start="2219" selection-end="2219" vertical-scroll-proportion="1.1549708">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/storage-provider.js">
+    <entry file="file://$PROJECT_DIR$/js/entity-model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="3" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/directives.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="5" selection-start="5468" selection-end="5468" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/angular.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="33" selection-start="27" selection-end="37" vertical-scroll-proportion="0.014807503">
+        <state line="152" column="56" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="8" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/form-field.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="407" selection-end="407" vertical-scroll-proportion="-4.375">
+        <state line="41" column="66" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -590,60 +589,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/libs/breeze-directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="53" selection-start="2982" selection-end="2982" vertical-scroll-proportion="-24.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/local-storage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/breeze.debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8016" column="4" selection-start="295270" selection-end="295270" vertical-scroll-proportion="4.2909093">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/entity-model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="56" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
+        <state line="19" column="14" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/data-provider.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="27" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="19" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/log-decorator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="0" selection-start="5582" selection-end="5582" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/ladda.min.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mock-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="32" selection-start="1430" selection-end="1454" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="11" selection-start="6177" selection-end="6177" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="57" selection-start="6732" selection-end="6732" vertical-scroll-proportion="0.0">
+        <state line="255" column="32" selection-start="6971" selection-end="6971" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/datacontext.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="6" selection-start="3101" selection-end="3285" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/mock-service-breeze.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="38" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.3128655">
+        <state line="29" column="23" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.35928145">
           <folding />
         </state>
       </provider>

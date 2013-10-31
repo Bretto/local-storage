@@ -22,6 +22,7 @@
 
     var module = angular.module('breeze.directives', []);
 
+
     /* Breeze Validation directive
      *
      *  Displays the model validation errors for an entity property
@@ -42,16 +43,9 @@
      *
      *   Learn more at http://www.breezejs.com/breeze-labs/breezedirectivesvalidationjs
      */
-    module.directive('zValidate', ['zDirectivesConfig', '$parse', zValidate]);
-
-    function zValidate(config, $parse) {
+    module.directive('zValidate', function zValidate(zDirectivesConfig, $parse) {
 
 
-        var directive = {
-            link: link,
-            restrict: 'A'
-        };
-        return directive;
 
         function link(scope, element, attrs) {
 
@@ -86,7 +80,7 @@
                 var errEl = element.nextAll('.invalid').first();
 
                 if (newValue) {
-                    var html = config.zValidateTemplate.replace(/%error%/, newValue);
+                    var html = zDirectivesConfig.zValidateTemplate.replace(/%error%/, newValue);
                     if (errEl.length) {
                         errEl.replaceWith(html);
                     } else {
@@ -207,7 +201,7 @@
             // if the data property is required, add the appropriate styling and element
             var requiredProperties = entityType.required;
             if (requiredProperties && requiredProperties[info.propertyPath]) {
-                var reqHtml = config.zRequiredTemplate;
+                var reqHtml = zDirectivesConfig.zRequiredTemplate;
                 var reqEl = angular.element(reqHtml);
 //                element.attr('required', true);
                 element.after(reqEl);
@@ -230,10 +224,14 @@
                 }
             }
 
-
         }
 
-    }
+        return  {
+            link: link,
+            restrict: 'A'
+        };
+
+    });
 
     /* Configure the breeze directives (optional)
      *

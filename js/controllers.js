@@ -4,7 +4,14 @@
 var controllers = angular.module('App.controllers', []);
 
 controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, StorageProvider, DataProvider, DataContext) {
-    $log.log('AppCtrl');
+
+    $log = $log.getInstance("AppCtrl", "color:#c44550;");
+    $log.error('Debug Test');
+    $log.log('Debug Test');
+    $log.debug('Debug Test');
+    $log.info('Debug Test');
+    $log.warn('Debug Test');
+
 
     StorageProvider.initDB();
 
@@ -28,7 +35,7 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 //        .then(function (fonctions) {
 //            return LocalStorage.setT_FONCTION(fonctions)
 //        })
-//
+
 
     $scope.employees = null;
     $scope.departements = null;
@@ -40,13 +47,12 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
     $scope.onSelect = function (item) {
 
-
         if ($scope.activeItem) {
             if ($scope.activeItem.entityAspect.entityState.name !== 'Detached') {
                 $scope.activeItem.entityAspect.rejectChanges();
             }
-
         }
+
         $scope.activeItem = item;
 
         var props = DataContext.manager.metadataStore.getEntityType(item.entityType.shortName).dataProperties;
@@ -61,8 +67,14 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     }
 
     $scope.onAddEmployee = function () {
+
         var newEntity = DataContext.manager.createEntity('Employee', {});
         $scope.onSelect(newEntity);
+        deferred.resolve();
+    }
+
+    $scope.isAddEmployeeComplete = function () {
+        return 'test';
     }
 
     $scope.onAddFonction = function () {
@@ -174,7 +186,7 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
         var entities = DataContext.manager.getEntities();
         angular.forEach(entities, function (entity) {
 //            if (entity.id < 0) {
-                console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name, 'hasTempId:', entity.entityAspect.hasTempKey);
+            console.log('id:', entity.id, 'State:', entity.entityAspect.entityState.name, 'hasTempId:', entity.entityAspect.hasTempKey);
 
 //            }
         });
@@ -210,11 +222,10 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
     }
 
 
-
     $scope.onSaveEntityGraph = function () {
 
+        var deferred = Q.defer();
         doIt();
-
 
         var entities = DataContext.manager.getEntities();
         angular.forEach(entities, function (entity) {
@@ -225,20 +236,9 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
             }
         });
 
-//        var so = new breeze.SaveOptions({ resourceName: "http://localhost:3000/SaveChanges" });
-        // listOfEntities may be null in which case all added/modified/deleted entities will be sent
-//        DataContext.manager.saveChanges().fin(function(){
-            //$scope.$digest();
-//            exportChanges();
-//            updateUI();
-//            $scope.$digest();
-//        })
 
-        DataContext.manager.saveChanges().then(function(data){
-            //$scope.$digest();
-//            exportChanges();
-//            console.log('data:', data);
-//            updateUI();
+        DataContext.manager.saveChanges().then(function (data) {
+
             angular.forEach(entities, function (entity) {
                 if (entity.entityAspect.entityState.isDeleted()) {
                     DataContext.manager.detachEntity(entity);
@@ -249,18 +249,21 @@ controllers.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, 
 
             exportChanges();
             $scope.$digest();
+            deferred.resolve();
 
-
-        }).fail(function(err){
+        }).fail(function (err) {
                 console.log('err:', err);
+                deferred.reject();
             })
 
+        return deferred.promise;
     }
 
 
-    function filterEmployeesById(employees) {
+    // form the breeze edmunds example
+    function filterEntityById(entity) {
         return function (id) {
-            return employees.filter(function (e) {
+            return entity.filter(function (e) {
                 return e.id === id;
             });
         };
