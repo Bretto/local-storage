@@ -1,0 +1,24 @@
+{
+  "name": "local-storage",
+  "version": "0.0.0",
+  "description": "test",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "~2.35.1",
+    "grunt": "~0.4.1",
+    "mold-source-map": "~0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bretto/local-storage.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Bretto/local-storage/issues"
+  }
+}

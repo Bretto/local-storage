@@ -2,56 +2,6 @@
 (function(navigator){
     "use strict";
 
-    var buildTimeString = function (date, format) {
-        format = format || '%h:%m:%s:%z';
-
-        function pad(value) {
-            return (value.toString().length < 2) ? '0' + value : value;
-        }
-
-        return format.replace(/%([a-zA-Z])/g, function (_, fmtCode) {
-            switch (fmtCode) {
-                case 'Y' :
-                    return     date.getFullYear();
-                case 'M' :
-                    return pad(date.getMonth() + 1);
-                case 'd' :
-                    return pad(date.getDate());
-                case 'h' :
-                    return pad(date.getHours());
-                case 'm' :
-                    return pad(date.getMinutes());
-                case 's' :
-                    return pad(date.getSeconds());
-                case 'z':
-                    return pad(date.getMilliseconds());
-                default:
-                    throw new Error('Unsupported format code: ' + fmtCode);
-            }
-        });
-    }
-
-    var supplant = function (template, values, pattern) {
-        pattern = pattern || /\{([^\{\}]*)\}/g;
-
-        return template.replace(pattern, function (a, b) {
-            var p = b.split('.'),
-                r = values;
-
-            try {
-                for (var s in p) {
-                    r = r[p[s]];
-                }
-                ;
-            } catch (e) {
-                r = a;
-            }
-
-            return (typeof r === 'string' || typeof r === 'number') ? r : a;
-        });
-    };
-
-
     var module = angular.module('App.LogDecorator', []);
 
     module.constant('LogDecorator', function (logDelegate) {
@@ -144,5 +94,55 @@
 
         return enchanceLogger(logDelegate);
     });
+
+
+    var buildTimeString = function (date, format) {
+        format = format || '%h:%m:%s:%z';
+
+        function pad(value) {
+            return (value.toString().length < 2) ? '0' + value : value;
+        }
+
+        return format.replace(/%([a-zA-Z])/g, function (_, fmtCode) {
+            switch (fmtCode) {
+                case 'Y' :
+                    return     date.getFullYear();
+                case 'M' :
+                    return pad(date.getMonth() + 1);
+                case 'd' :
+                    return pad(date.getDate());
+                case 'h' :
+                    return pad(date.getHours());
+                case 'm' :
+                    return pad(date.getMinutes());
+                case 's' :
+                    return pad(date.getSeconds());
+                case 'z':
+                    return pad(date.getMilliseconds());
+                default:
+                    throw new Error('Unsupported format code: ' + fmtCode);
+            }
+        });
+    }
+
+    var supplant = function (template, values, pattern) {
+        pattern = pattern || /\{([^\{\}]*)\}/g;
+
+        return template.replace(pattern, function (a, b) {
+            var p = b.split('.'),
+                r = values;
+
+            try {
+                for (var s in p) {
+                    r = r[p[s]];
+                }
+                ;
+            } catch (e) {
+                r = a;
+            }
+
+            return (typeof r === 'string' || typeof r === 'number') ? r : a;
+        });
+    };
 
 })(window.navigator);

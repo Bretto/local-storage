@@ -226,30 +226,5 @@ directives.directive('formField', function ($log, $compile) {
 
 
 
-directives.directive('laddaButton', function ($log, $parse) {
 
-    function link(scope, element, attrs, ctrl) {
-
-        element.bind( "click", function() {
-
-            var ladda = Ladda.create(this);
-            ladda.start();
-
-            var fn = $parse(attrs[ 'laddaButton' ]);
-
-            scope.$apply(function () {
-                var promise = fn(scope, {});
-                promise.finally(function(){
-                    ladda.stop();
-                });
-
-            });
-        });
-    }
-
-    return {
-        restrict: 'A',
-        link: link
-    };
-});
 
