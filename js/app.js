@@ -4,8 +4,11 @@
     require('./bower_components/jquery/jquery')
     require('./bower_components/angular/angular')
 
+//    require('./bower_components/q/q.js')
+//    require('./bower_components/bower-breeze/breeze.debug.js')
 
-    require('q');
+
+    require('Q');
     require('breeze');
     require('./controllers');
     require('./entity-model');
@@ -24,8 +27,6 @@
     require('./breeze-directives.js');
     require('./log-decorator');
     require('./ladda-button');
-
-
 
 
     angular.module('App', [
@@ -50,12 +51,12 @@
 
             zDirectivesConfigProvider.zValidateTemplate = '<span class="invalid error-msg"><i class="glyphicon glyphicon-warning-sign"></i>%error%</span>';
 
-            $provide.decorator('$log', function ($delegate) {
-
-                LogDecorator($delegate)
-
-                return $delegate;
-            });
+//            $provide.decorator('$log', function ($delegate) {
+//
+//                LogDecorator($delegate)
+//
+//                return $delegate;
+//            });
         });
 
 })();

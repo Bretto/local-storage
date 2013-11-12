@@ -1,0 +1,1 @@
+var fs=require("fs"),browserify=require("browserify"),shim=require("browserify-shim");shim(browserify(),{Q:{path:"./js/bower_components/q/q.js",exports:"Q"},breeze:{path:"./js/bower_components/bower-breeze/breeze.debug.js",exports:"breeze"}}).require(require.resolve("./js/app.js"),{entry:!0}).bundle({debug:!0}).pipe(fs.createWriteStream("./bundle.js"));

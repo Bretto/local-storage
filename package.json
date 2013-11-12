@@ -8,7 +8,10 @@
     "grunt": "~0.4.1",
     "mold-source-map": "~0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt": "~0.4.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +19,16 @@
     "type": "git",
     "url": "https://github.com/Bretto/local-storage.git"
   },
-  "author": "",
-  "license": "BSD",
+  "author": {
+    "name": "Brett Coffin",
+    "email": "separ8@gmail.com",
+    "web": "http://dewmap.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/Bretto/local-storage/issues"
   }

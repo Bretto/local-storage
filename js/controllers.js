@@ -5,12 +5,12 @@
 
     module.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, StorageProvider, DataProvider, DataContext) {
 
-        $log = $log.getInstance("AppCtrl", "color:#c44550;");
-        $log.error('Debug Test');
-        $log.log('Debug Test');
-        $log.debug('Debug Test');
-        $log.info('Debug Test');
-        $log.warn('Debug Test');
+//        $log = $log.getInstance("AppCtrl", "color:#c44550;");
+//        $log.error('Debug Test');
+//        $log.log('Debug Test');
+//        $log.debug('Debug Test');
+//        $log.info('Debug Test');
+//        $log.warn('Debug Test');
 
         StorageProvider.initDB();
 
