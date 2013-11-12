@@ -1,64 +1,65 @@
-'use strict';
+(function () {
+    "use strict";
 
 
-var services = angular.module('App.DataContext', []);
+    var services = angular.module('App.DataContext', []);
 
-services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataProvider, StorageProvider, $log) {
+    services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataProvider, $log) {
 
-    breeze.config.initializeAdapterInstance("modelLibrary", "backingStore", true);
+        breeze.config.initializeAdapterInstance("modelLibrary", "backingStore", true);
 
-    var serviceName = "http://localhost/~Separ8/local-storage";
+        var serviceName = "http://localhost/~Separ8/local-storage";
 //    var serviceName = "http://localhost:3000";
 
-    var ds = new breeze.DataService({
-        serviceName: serviceName,
-        hasServerMetadata: false,
-        useJsonp: false,
-        jsonResultsAdapter: jsonResultsAdapter
-    });
-
-    var manager = new breeze.EntityManager({dataService: ds});
-
-    EntityModel.initialize(manager.metadataStore);
-
-    function exportEmployees(employees) {
-        return manager.exportEntities(employees)
-    }
-
-    function createEntity(entityType, rows) {
-
-        var entities = [];
-
-        angular.forEach(rows, function (row) {
-            var newEntity = manager.createEntity(entityType, row);
-            newEntity.entityAspect.acceptChanges();
-            entities.push(newEntity);
+        var ds = new breeze.DataService({
+            serviceName: serviceName,
+            hasServerMetadata: false,
+            useJsonp: false,
+            jsonResultsAdapter: jsonResultsAdapter
         });
 
-        // two ways of doing it array of breeze query...
-        var query = new breeze.EntityQuery(entityType).toType(entityType)
-        var results = manager.executeQueryLocally(query);
+        var manager = new breeze.EntityManager({dataService: ds});
 
-        return results;
-    }
+        EntityModel.initialize(manager.metadataStore);
 
-    function getAllEntity(entityType) {
+        function exportEmployees(employees) {
+            return manager.exportEntities(employees)
+        }
 
-        var deferred = Q.defer();
+        function createEntity(entityType, rows) {
 
-        DataProvider.getAllEntity(entityType, manager)
-            .catch(function (err) {
-                $log.error('Error getAllEntity', err);
-                deferred.reject(new Error(err));
-            })
-            .done(function (res) {
-                deferred.resolve(res);
-            })
+            var entities = [];
+
+            angular.forEach(rows, function (row) {
+                var newEntity = manager.createEntity(entityType, row);
+                newEntity.entityAspect.acceptChanges();
+                entities.push(newEntity);
+            });
+
+            // two ways of doing it array of breeze query...
+            var query = new breeze.EntityQuery(entityType).toType(entityType)
+            var results = manager.executeQueryLocally(query);
+
+            return results;
+        }
+
+        function getAllEntity(entityType) {
+
+            var deferred = Q.defer();
+
+            DataProvider.getAllEntity(entityType, manager)
+                .catch(function (err) {
+                    $log.error('Error getAllEntity', err);
+                    deferred.reject(new Error(err));
+                })
+                .done(function (res) {
+                    deferred.resolve(res);
+                })
 
 
-        return deferred.promise;
+            return deferred.promise;
 
-    }
+        }
 
 
 //    function getAllEntity(entityType) {
@@ -80,49 +81,50 @@ services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataP
 //
 //    }
 
-    function saveEntity(entity) {
+        function saveEntity(entity) {
 
-        var deferred = Q.defer();
+            var deferred = Q.defer();
 
-        StorageProvider.saveEntity(entity)
-            .catch(function (err) {
-                $log.error('Error saveEntity', err);
-                deferred.reject(new Error(err));
-            })
-            .done(function (res) {
-                var entities = createEntity(entityType, res);
-                deferred.resolve(entities);
-            })
+            StorageProvider.saveEntity(entity)
+                .catch(function (err) {
+                    $log.error('Error saveEntity', err);
+                    deferred.reject(new Error(err));
+                })
+                .done(function (res) {
+                    var entities = createEntity(entityType, res);
+                    deferred.resolve(entities);
+                })
 
-        return deferred.promise;
+            return deferred.promise;
 
-    }
+        }
 
-    function deleteEntity(entity) {
+        function deleteEntity(entity) {
 
-        var deferred = Q.defer();
+            var deferred = Q.defer();
 
-        StorageProvider.deleteEntity(entity)
-            .catch(function (err) {
-                $log.error('Error deleteEntity', err);
-                deferred.reject(new Error(err));
-            })
-            .done(function (res) {
+            StorageProvider.deleteEntity(entity)
+                .catch(function (err) {
+                    $log.error('Error deleteEntity', err);
+                    deferred.reject(new Error(err));
+                })
+                .done(function (res) {
 
-                deferred.resolve(res);
-            })
+                    deferred.resolve(res);
+                })
 
-        return deferred.promise;
+            return deferred.promise;
 
-    }
+        }
 
-    return {
-        exportEmployees: exportEmployees,
-        getAllEntity: getAllEntity,
-        saveEntity:saveEntity,
-        deleteEntity:deleteEntity,
-        manager: manager
-    };
+        return {
+            exportEmployees: exportEmployees,
+            getAllEntity: getAllEntity,
+            saveEntity: saveEntity,
+            deleteEntity: deleteEntity,
+            manager: manager
+        };
 
-})
-;
+    });
+
+})();

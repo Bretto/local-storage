@@ -1,21 +1,24 @@
-'use strict';
+(function () {
+    "use strict";
 
-var services = angular.module('App.BreezeStorage', []);
+    var module = angular.module('App.BreezeStorage', []);
 
-services.factory('BreezeStorage', function ($log, Utils) {
+    module.factory('BreezeStorage', function ($log, Utils) {
 
-    var stashName = "entityGraph";
+        var stashName = "entityGraph";
 
-    var getEntityGraph = function(){
-        return window.localStorage.getItem(stashName);
-    }
+        var getEntityGraph = function () {
+            return window.localStorage.getItem(stashName);
+        }
 
-    var setEntityGraph = function(exportData){
-        return window.localStorage.setItem(stashName, exportData);
-    }
+        var setEntityGraph = function (exportData) {
+            return window.localStorage.setItem(stashName, exportData);
+        }
 
-    return {
-        setEntityGraph: setEntityGraph,
-        getEntityGraph: getEntityGraph
-    };
-});
+        return {
+            setEntityGraph: setEntityGraph,
+            getEntityGraph: getEntityGraph
+        };
+    });
+
+})();

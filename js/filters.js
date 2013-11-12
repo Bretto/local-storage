@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+    "use strict";
 
 var filters = angular.module('App.filters', []);
 
@@ -11,3 +12,5 @@ filters.filter('age',function () {
         return age;
     };
 });
+
+})();

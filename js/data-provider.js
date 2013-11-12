@@ -1,30 +1,32 @@
-'use strict';
+(function () {
+    "use strict";
 
+    var services = angular.module('App.DataProvider', []);
 
-var services = angular.module('App.DataProvider', []);
+    services.factory('DataProvider', function (WebService, GLOBALS, MockServiceBreeze) {
 
-services.factory('DataProvider', function (WebService, StorageProvider, MockService, GLOBALS, MockServiceBreeze) {
+        var dataProvider = null;
 
-    var dataProvider = null;
+        switch (GLOBALS.MODE) {
 
-    switch (GLOBALS.MODE) {
+            case GLOBALS.WS:
+                dataProvider = WebService;
+                break;
 
-        case GLOBALS.WS:
-            dataProvider = WebService;
-            break;
+            case GLOBALS.DB:
+//            dataProvider = StorageProvider;
+                break;
 
-        case GLOBALS.DB:
-            dataProvider = StorageProvider;
-            break;
+            case GLOBALS.MOCK_BREEZE:
+                dataProvider = MockServiceBreeze;
+                break;
 
-        case GLOBALS.MOCK_BREEZE:
-            dataProvider = MockServiceBreeze;
-            break;
+            default:
+//            dataProvider = MockService;
+                break;
+        }
 
-        default:
-            dataProvider = MockService;
-            break;
-    }
+        return dataProvider;
+    });
 
-    return dataProvider;
-});
+})();

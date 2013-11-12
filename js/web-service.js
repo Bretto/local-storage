@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+    "use strict";
 
 var services = angular.module('App.WebService', []);
 
@@ -140,4 +141,6 @@ services.factory('WebService', function ($http, $log, $rootScope) {
         getFonctions: getFonctions
     };
 });
+
+})();
 

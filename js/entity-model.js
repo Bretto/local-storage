@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+    "use strict";
 
 var services = angular.module('App.EntityModel', []);
 
@@ -185,5 +186,7 @@ services.factory('EntityModel', function ($http, $log, $rootScope) {
     }
 
 });
+
+})();
 
 

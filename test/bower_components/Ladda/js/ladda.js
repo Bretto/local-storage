@@ -25,7 +25,7 @@
 	'use strict';
 
     //TODO HACK TO FIX
-    var Spinner = require('./spin');
+//    var Spinner = require('./spin');
 
 	// All currently instantiated instances of Ladda
 	var ALL_INSTANCES = [];

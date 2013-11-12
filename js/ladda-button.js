@@ -1,7 +1,7 @@
 (function(){
     "use strict";
 
-    var ladda = require('./bower_components/Ladda/js/ladda');
+//    var ladda = require('./bower_components/Ladda/js/ladda');
 
     var module = angular.module('App.LaddaButton', []);
 
@@ -33,3 +33,4 @@
     });
 
 })();
+

@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+    "use strict";
 
 var services = angular.module('App.services', []);
 
@@ -61,6 +62,8 @@ services.factory('DataModel', function ($http, $log, $rootScope) {
 
     return dataModel;
 });
+
+})();
 
 
 

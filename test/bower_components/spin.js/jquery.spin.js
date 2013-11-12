@@ -41,7 +41,7 @@ $('#el').spin('flower', 'red');
   }
   else if (typeof define == 'function' && define.amd) {
     // AMD, register as anonymous module
-    define(['.', 'spin'], factory)
+    define(['./', 'spin'], factory)
   }
   else {
     // Browser globals

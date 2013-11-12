@@ -2,22 +2,163 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59b94600-2902-45b7-993e-d39edd69eae5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/libs/breeze.debug.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bundle.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/js/bower_components/angular/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular.js" afterPath="$PROJECT_DIR$/js/bower_components/angular/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular.min.js.map" afterPath="$PROJECT_DIR$/js/bower_components/angular/angular.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular.min.js" afterPath="$PROJECT_DIR$/js/bower_components/angular/angular.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dest/output.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/libs/breeze.debug.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/_app-ctrl.js" afterPath="$PROJECT_DIR$/_bk/_app-ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/_app.js" afterPath="$PROJECT_DIR$/_bk/_app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/app-ctrl.js" afterPath="$PROJECT_DIR$/_bk/app-ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/.bower.json" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/.gitignore" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/Gruntfile.js" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/Gruntfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/LICENSE" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/README.md" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/bower.json" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/css/demo.css" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/css/demo.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/css/ladda-theme.scss" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/css/ladda-theme.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/css/ladda.scss" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/css/ladda.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/dist/ladda-themeless.min.css" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/dist/ladda-themeless.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/dist/ladda.min.css" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/dist/ladda.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/dist/ladda.min.js" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/dist/ladda.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/dist/spin.min.js" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/dist/spin.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/index.html" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/js/ladda.js" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/js/ladda.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/js/spin.js" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/js/spin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/package.json" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/Ladda/test/bootstrap.html" afterPath="$PROJECT_DIR$/test/bower_components/Ladda/test/bootstrap.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/test/bower_components/angular/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/README.md" afterPath="$PROJECT_DIR$/test/bower_components/angular/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular-csp.css" afterPath="$PROJECT_DIR$/test/bower_components/angular/angular-csp.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular.js" afterPath="$PROJECT_DIR$/test/bower_components/angular/angular.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular.min.js" afterPath="$PROJECT_DIR$/test/bower_components/angular/angular.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/angular.min.js.map" afterPath="$PROJECT_DIR$/test/bower_components/angular/angular.min.js.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/angular/bower.json" afterPath="$PROJECT_DIR$/test/bower_components/angular/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/.bower.json" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/LICENSE" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/README.md" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/bower.json" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.base.debug.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/breeze.base.debug.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.base.min.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/breeze.base.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.debug.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/breeze.debug.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.intellisense.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/breeze.intellisense.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.min.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/breeze.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/labs/breeze.ajaxrestinterceptor.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/labs/breeze.ajaxrestinterceptor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/labs/breeze.directives.css" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/labs/breeze.directives.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/labs/breeze.directives.validation.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/labs/breeze.directives.validation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/labs/breeze.saveErrorExtensions.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/labs/breeze.saveErrorExtensions.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/labs/breeze.savequeuing.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/labs/breeze.savequeuing.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/bower-breeze/labs/breeze.to$q.js" afterPath="$PROJECT_DIR$/test/bower_components/bower-breeze/labs/breeze.to$q.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/.bower.json" afterPath="$PROJECT_DIR$/test/bower_components/jquery/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/.gitignore" afterPath="$PROJECT_DIR$/test/bower_components/jquery/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/README.md" afterPath="$PROJECT_DIR$/test/bower_components/jquery/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/bower.json" afterPath="$PROJECT_DIR$/test/bower_components/jquery/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/component.json" afterPath="$PROJECT_DIR$/test/bower_components/jquery/component.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/composer.json" afterPath="$PROJECT_DIR$/test/bower_components/jquery/composer.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/jquery-migrate.js" afterPath="$PROJECT_DIR$/test/bower_components/jquery/jquery-migrate.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/jquery-migrate.min.js" afterPath="$PROJECT_DIR$/test/bower_components/jquery/jquery-migrate.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/jquery.js" afterPath="$PROJECT_DIR$/test/bower_components/jquery/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/test/bower_components/jquery/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/jquery.min.map" afterPath="$PROJECT_DIR$/test/bower_components/jquery/jquery.min.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/jquery/package.json" afterPath="$PROJECT_DIR$/test/bower_components/jquery/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.bower.json" afterPath="$PROJECT_DIR$/test/bower_components/q/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.coverignore" afterPath="$PROJECT_DIR$/test/bower_components/q/.coverignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.gitignore" afterPath="$PROJECT_DIR$/test/bower_components/q/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.jshintrc" afterPath="$PROJECT_DIR$/test/bower_components/q/.jshintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.mailmap" afterPath="$PROJECT_DIR$/test/bower_components/q/.mailmap" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.npmignore" afterPath="$PROJECT_DIR$/test/bower_components/q/.npmignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/.travis.yml" afterPath="$PROJECT_DIR$/test/bower_components/q/.travis.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/CHANGES.md" afterPath="$PROJECT_DIR$/test/bower_components/q/CHANGES.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/test/bower_components/q/CONTRIBUTING.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/Gruntfile.js" afterPath="$PROJECT_DIR$/test/bower_components/q/Gruntfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/LICENSE" afterPath="$PROJECT_DIR$/test/bower_components/q/LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/README.md" afterPath="$PROJECT_DIR$/test/bower_components/q/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/VERSIONS.md" afterPath="$PROJECT_DIR$/test/bower_components/q/VERSIONS.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/benchmark/compare-with-callbacks.js" afterPath="$PROJECT_DIR$/test/bower_components/q/benchmark/compare-with-callbacks.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/benchmark/scenarios.js" afterPath="$PROJECT_DIR$/test/bower_components/q/benchmark/scenarios.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/README.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/README.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q0.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q0.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q1.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q1.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q2.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q2.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q3.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q3.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q4.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q4.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q5.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q5.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q6.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q6.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/design/q7.js" afterPath="$PROJECT_DIR$/test/bower_components/q/design/q7.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/all.js" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/all.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/async-generators/0.html" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/async-generators/0.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/async-generators/1-return.js" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/async-generators/1-return.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/async-generators/2-error-propagation.js" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/async-generators/2-error-propagation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/async-generators/3-spawn.js" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/async-generators/3-spawn.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/async-generators/4-flow-control.js" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/async-generators/4-flow-control.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/examples/async-generators/README.md" afterPath="$PROJECT_DIR$/test/bower_components/q/examples/async-generators/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/package.json" afterPath="$PROJECT_DIR$/test/bower_components/q/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/q.js" afterPath="$PROJECT_DIR$/test/bower_components/q/q.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/queue.js" afterPath="$PROJECT_DIR$/test/bower_components/q/queue.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/ref_send.md" afterPath="$PROJECT_DIR$/test/bower_components/q/ref_send.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/aplus-adapter.js" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/aplus-adapter.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/lib/jasmine-1.2.0/MIT.LICENSE" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/lib/jasmine-1.2.0/MIT.LICENSE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/lib/jasmine-1.2.0/jasmine-html.js" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/lib/jasmine-1.2.0/jasmine-html.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/lib/jasmine-1.2.0/jasmine.css" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/lib/jasmine-1.2.0/jasmine.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/lib/jasmine-1.2.0/jasmine.js" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/lib/jasmine-1.2.0/jasmine.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/lib/jasmine-promise.js" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/lib/jasmine-promise.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/q-spec.html" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/q-spec.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/q-spec.js" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/q-spec.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/q/spec/queue-spec.js" afterPath="$PROJECT_DIR$/test/bower_components/q/spec/queue-spec.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/.bower.json" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/.gitignore" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/.jshintrc" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/.jshintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/LICENSE.txt" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/LICENSE.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/Makefile" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/Makefile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/README.md" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/bg.png" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/bg.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/browsers.png" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/browsers.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/crosshair.gif" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/crosshair.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/fd-slider/fd-slider-tooltip.css" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/fd-slider/fd-slider-tooltip.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/fd-slider/fd-slider.css" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/fd-slider/fd-slider.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/fd-slider/fd-slider.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/fd-slider/fd-slider.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/github.gif" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/github.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/jquery.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/main.css" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/prettify.css" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/prettify.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/prettify.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/prettify.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/preview.jpg" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/preview.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/assets/ribbon.png" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/assets/ribbon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/bower.json" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/dist/spin.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/dist/spin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/dist/spin.min.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/dist/spin.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/amd.html" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/amd.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/jquery.html" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/jquery.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/modernizr.html" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/modernizr.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/modernizr.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/modernizr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/positioning.html" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/positioning.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/require.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/require.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/example/settings.html" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/example/settings.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/favicon.ico" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/favicon.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/index.html" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/jquery.spin.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/jquery.spin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/package.json" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bower_components/spin.js/spin.js" afterPath="$PROJECT_DIR$/test/bower_components/spin.js/spin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/libs/q.min.js" afterPath="$PROJECT_DIR$/test/libs/q.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/local-storage.js" afterPath="$PROJECT_DIR$/_bk/local-storage.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/log-decorator.js" afterPath="$PROJECT_DIR$/_bk/log-decorator.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/mock-service.js" afterPath="$PROJECT_DIR$/_bk/mock-service.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/storage-provider.js" afterPath="$PROJECT_DIR$/_bk/storage-provider.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/web-sql.js" afterPath="$PROJECT_DIR$/_bk/web-sql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bower_components/angular/bower.json" afterPath="$PROJECT_DIR$/js/bower_components/angular/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.js" afterPath="$PROJECT_DIR$/build.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/breeze-storage.js" afterPath="$PROJECT_DIR$/js/breeze-storage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/data-provider.js" afterPath="$PROJECT_DIR$/js/data-provider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/datacontext.js" afterPath="$PROJECT_DIR$/js/datacontext.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/directives.js" afterPath="$PROJECT_DIR$/js/directives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/entity-model.js" afterPath="$PROJECT_DIR$/js/entity-model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/filters.js" afterPath="$PROJECT_DIR$/js/filters.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/grunt/package.json" afterPath="$PROJECT_DIR$/node_modules/grunt/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/grunt/node_modules/colors/package.json" afterPath="$PROJECT_DIR$/node_modules/grunt/node_modules/colors/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/grunt/node_modules/minimatch/node_modules/lru-cache/package.json" afterPath="$PROJECT_DIR$/node_modules/grunt/node_modules/minimatch/node_modules/lru-cache/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/grunt/node_modules/rimraf/package.json" afterPath="$PROJECT_DIR$/node_modules/grunt/node_modules/rimraf/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ladda-button.js" afterPath="$PROJECT_DIR$/js/ladda-button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/mock-service-breeze.js" afterPath="$PROJECT_DIR$/js/mock-service-breeze.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services.js" afterPath="$PROJECT_DIR$/js/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/web-service.js" afterPath="$PROJECT_DIR$/js/web-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JsonEditor.iws" />
@@ -41,46 +182,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.js">
+      <file leaf-file-name="ladda-button.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/ladda-button.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mock-service-breeze.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/mock-service-breeze.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="93" column="5" selection-start="2327" selection-end="2327" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1485">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="21" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.64444447" vertical-offset="45" max-vertical-offset="765">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="33" selection-start="6233" selection-end="6233" vertical-scroll-proportion="0.57746476" vertical-offset="1926" max-vertical-offset="2580">
+            <state line="128" column="0" selection-start="5081" selection-end="5081" vertical-scroll-proportion="-2.75" vertical-offset="1854" max-vertical-offset="2685">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
+      <file leaf-file-name="datacontext.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/datacontext.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="22" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1125">
+            <state line="29" column="0" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/bower_components/angular/README.md">
+      <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+            <state line="65" column="5" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/bower_components/angular/.bower.json">
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="330">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web-service.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/web-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="138" column="35" selection-start="4218" selection-end="4218" vertical-scroll-proportion="0.0" vertical-offset="1575" max-vertical-offset="2280">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entity-model.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/entity-model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="189" column="5" selection-start="6177" selection-end="6177" vertical-scroll-proportion="0.0" vertical-offset="2295" max-vertical-offset="2970">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filters.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/filters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -104,22 +292,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/ladda-button/spin.js" />
-        <option value="$PROJECT_DIR$/js/ladda-button/ladda-button.js" />
-        <option value="$PROJECT_DIR$/js/ladda-button/ladda.js" />
-        <option value="$PROJECT_DIR$/bower_components/Ladda/js/ladda.js" />
-        <option value="$PROJECT_DIR$/js/bower_components/Ladda/js/ladda.js" />
         <option value="$PROJECT_DIR$/js/ladda-button.js" />
-        <option value="$PROJECT_DIR$/js/app-ctrl.js" />
-        <option value="$PROJECT_DIR$/js/data-provider.js" />
-        <option value="$PROJECT_DIR$/js/services.js" />
+        <option value="$PROJECT_DIR$/_bk/app-ctrl.js" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
-        <option value="$PROJECT_DIR$/js/bower_components/angular/angular.js" />
-        <option value="$PROJECT_DIR$/build.js" />
+        <option value="$PROJECT_DIR$/js/my-entity-model.js" />
+        <option value="$PROJECT_DIR$/js/entity-model.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/breeze-storage.js" />
+        <option value="$PROJECT_DIR$/js/data-provider.js" />
+        <option value="$PROJECT_DIR$/js/directives.js" />
+        <option value="$PROJECT_DIR$/js/filters.js" />
+        <option value="$PROJECT_DIR$/js/mock-service-breeze.js" />
+        <option value="$PROJECT_DIR$/js/services.js" />
+        <option value="$PROJECT_DIR$/js/web-service.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/datacontext.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -152,8 +340,8 @@
       <showLibraryContents ProjectPane="true" />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource ProjectPane="true" />
-      <autoscrollFromSource ProjectPane="true" />
+      <autoscrollToSource ProjectPane="false" />
+      <autoscrollFromSource ProjectPane="false" />
       <sortByType />
     </navigator>
     <panes>
@@ -185,7 +373,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -202,10 +390,6 @@
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -217,73 +401,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower-breeze" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dest" />
+              <option name="myItemId" value="_bk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,7 +414,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="settings.nodejs" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../releve-de-prix" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -315,14 +433,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/js/bower_components" />
-      <recent name="$PROJECT_DIR$/js/libs" />
       <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/js/libs" />
+      <recent name="$PROJECT_DIR$/js/bower_components" />
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/_bk" />
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/js/ladda-btn" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -394,13 +514,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24573055" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35959223" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3484708" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24895833" sideWeight="0.6404078" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24895833" sideWeight="0.6515292" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993513" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -409,7 +530,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -429,123 +549,117 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="4215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/breeze.debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="24" selection-start="303" selection-end="303" vertical-scroll-proportion="0.115606934" vertical-offset="0" max-vertical-offset="230100">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/libs/q.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/jquery/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="132525">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="861" selection-end="861" vertical-scroll-proportion="0.54298645" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/angular/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/angular/.bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="23" selection-start="1749" selection-end="1749" vertical-scroll-proportion="0.36" vertical-offset="426" max-vertical-offset="300540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="507075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5321" column="16" selection-start="196506" selection-end="196512" vertical-scroll-proportion="0.33333334" vertical-offset="79607" max-vertical-offset="236370">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/bower-breeze/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/bower-breeze/breeze.base.debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="545" selection-end="557" vertical-scroll-proportion="0.41538462" vertical-offset="0" max-vertical-offset="216195">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/bower_components/angular/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+        <state line="61" column="0" selection-start="1819" selection-end="1819" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/breeze-directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/breeze-storage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="5" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="32" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/data-provider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="41" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="5" selection-start="6512" selection-end="6512" vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/entity-model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="5" selection-start="6177" selection-end="6177" vertical-scroll-proportion="0.0" vertical-offset="2265" max-vertical-offset="2970">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ladda-button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/mock-service-breeze.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="5" selection-start="2327" selection-end="2327" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="5" selection-start="1649" selection-end="1649" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/web-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="35" selection-start="4218" selection-end="4218" vertical-scroll-proportion="0.0" vertical-offset="1575" max-vertical-offset="2280">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="33" selection-start="6233" selection-end="6233" vertical-scroll-proportion="0.57746476" vertical-offset="1926" max-vertical-offset="2580">
+        <state line="128" column="0" selection-start="5081" selection-end="5081" vertical-scroll-proportion="-2.75" vertical-offset="1854" max-vertical-offset="2685">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/datacontext.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="21" selection-start="1276" selection-end="1276" vertical-scroll-proportion="0.64444447" vertical-offset="45" max-vertical-offset="765">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

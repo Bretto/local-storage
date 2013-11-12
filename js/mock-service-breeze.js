@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+    "use strict";
 
 
 var services = angular.module('App.MockServiceBreeze', []);
@@ -89,3 +90,5 @@ services.factory('MockServiceBreeze', function (Utils, $log) {
         getAllEntity: getAllEntity
     };
 });
+
+})();

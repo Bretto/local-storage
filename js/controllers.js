@@ -3,7 +3,7 @@
 
     var module = angular.module('App.controllers', []);
 
-    module.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, StorageProvider, DataProvider, DataContext) {
+    module.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, DataProvider, DataContext) {
 
 //        $log = $log.getInstance("AppCtrl", "color:#c44550;");
 //        $log.error('Debug Test');
@@ -12,7 +12,7 @@
 //        $log.info('Debug Test');
 //        $log.warn('Debug Test');
 
-        StorageProvider.initDB();
+//        StorageProvider.initDB();
 
 //    LocalStorage
 //        .initDB()
