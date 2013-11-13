@@ -12,33 +12,33 @@ services.value('GLOBALS', {
 });
 
 
-services.value('jsonResultsAdapter',
-    new breeze.JsonResultsAdapter({
-
-        name: "context",
-
-        extractResults: function (data) {
-            var results = data.results;
-            if (!results) throw new Error("Unable to resolve 'results' property");
-            // Parse only the make and model types
-            return results && (results.employes || results.departements || results.fonctions);
-        },
-
-        visitNode: function (node, parseContext, nodeContext) {
-
-            var index = parseContext.url.lastIndexOf('/');
-            var str = parseContext.url.substr(index);
-
-            if(str === '/employes.json'){
-                return { entityType: "Employee"  }
-            }else if(str === '/departements.json'){
-                return { entityType: "Departement"  }
-            }else if(str === '/fonctions.json'){
-                return {entityType: "Fonction"}
-            }
-        }
-
-    }));
+//services.value('jsonResultsAdapter',
+//    new breeze.JsonResultsAdapter({
+//
+//        name: "context",
+//
+//        extractResults: function (data) {
+//            var results = data.results;
+//            if (!results) throw new Error("Unable to resolve 'results' property");
+//            // Parse only the make and model types
+//            return results && (results.employes || results.departements || results.fonctions);
+//        },
+//
+//        visitNode: function (node, parseContext, nodeContext) {
+//
+//            var index = parseContext.url.lastIndexOf('/');
+//            var str = parseContext.url.substr(index);
+//
+//            if(str === '/employes.json'){
+//                return { entityType: "Employee"  }
+//            }else if(str === '/departements.json'){
+//                return { entityType: "Departement"  }
+//            }else if(str === '/fonctions.json'){
+//                return {entityType: "Fonction"}
+//            }
+//        }
+//
+//    }));
 
 services.factory('DataModel', function ($http, $log, $rootScope) {
 

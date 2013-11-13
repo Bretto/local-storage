@@ -3,7 +3,7 @@
 
 var services = angular.module('App.WebService', []);
 
-services.factory('WebService', function ($http, $log, $rootScope) {
+services.factory('WebService', function ($http, $log, $rootScope, gQ) {
 
     function addSingleQuotes(str) {
         if (str) str = str.replace(/'/g, "''");
@@ -12,7 +12,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
 
     var getEmployees = function () {
         $log.log('getEmployees');
-        var deferred = Q.defer();
+        var deferred = gQ.defer();
 
         $.getJSON('assets/employes.json')
             .success(function (res) {
@@ -46,7 +46,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
 
     var getDepartements = function () {
         $log.log('getDepartements');
-        var deferred = Q.defer();
+        var deferred = gQ.defer();
 
         $.getJSON('assets/departements.json')
             .success(function (res) {
@@ -74,7 +74,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
 
     var getFonctions = function () {
         $log.log('getFonctions');
-        var deferred = Q.defer();
+        var deferred = gQ.defer();
 
         $.getJSON('assets/fonctions.json')
             .success(function (res) {
@@ -101,7 +101,7 @@ services.factory('WebService', function ($http, $log, $rootScope) {
 
     var getAllEmployee = function () {
         $log.log('getAllEmployee');
-        var deferred = Q.defer();
+        var deferred = gQ.defer();
 
         $.getJSON('assets/employes.json')
             .success(function (res) {

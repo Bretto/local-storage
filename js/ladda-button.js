@@ -3,15 +3,17 @@
 
 //    var ladda = require('./bower_components/Ladda/js/ladda');
 
+
+
     var module = angular.module('App.LaddaButton', []);
 
-    module.directive('laddaButton', function ($log, $parse) {
+    module.directive('laddaButton', function ($log, $parse, gLadda) {
 
         function link(scope, element, attrs) {
 
             element.bind( "click", function() {
 
-                var btn = ladda.create(this);
+                var btn = gLadda.create(this);
                 btn.start();
 
                 var fn = $parse(attrs[ 'laddaButton' ]);

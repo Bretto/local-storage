@@ -17,18 +17,18 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 options: {
-//                    sourceMap: 'path/to/source-map.js',
+                    sourceMap: './bundle-map.js',
                     mangle: false,
                     beautify: true
                 },
                 files: {
                     './bundle.js': [
-                        './test/bower_components/q/q.js',
-                        './test/bower_components/jquery/jquery.js',
-                        './test/bower_components/bower-breeze/breeze.debug.js',
-                        './test/bower_components/angular/angular.js',
-                        './test/bower_components/Ladda/js/ladda.js',
-                        './test/bower_components/Ladda/js/spin.js',
+                        './js/bower_components/q/q.js',
+                        './js/bower_components/jquery/jquery.js',
+                        './js/bower_components/bower-breeze/breeze.debug.js',
+                        './js/bower_components/angular/angular.js',
+                        './js/bower_components/Ladda/js/spin.js',
+                        './js/bower_components/Ladda/js/ladda.js',
                         './js/*.js'
                     ]
                 }

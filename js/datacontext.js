@@ -4,21 +4,21 @@
 
     var services = angular.module('App.DataContext', []);
 
-    services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataProvider, $log) {
+    services.factory('DataContext', function (EntityModel, jsonResultsAdapter, DataProvider, $log, gBreeze, gQ) {
 
-        breeze.config.initializeAdapterInstance("modelLibrary", "backingStore", true);
+        gBreeze.config.initializeAdapterInstance("modelLibrary", "backingStore", true);
 
         var serviceName = "http://localhost/~Separ8/local-storage";
 //    var serviceName = "http://localhost:3000";
 
-        var ds = new breeze.DataService({
+        var ds = new gBreeze.DataService({
             serviceName: serviceName,
             hasServerMetadata: false,
             useJsonp: false,
             jsonResultsAdapter: jsonResultsAdapter
         });
 
-        var manager = new breeze.EntityManager({dataService: ds});
+        var manager = new gBreeze.EntityManager({dataService: ds});
 
         EntityModel.initialize(manager.metadataStore);
 
@@ -36,8 +36,8 @@
                 entities.push(newEntity);
             });
 
-            // two ways of doing it array of breeze query...
-            var query = new breeze.EntityQuery(entityType).toType(entityType)
+            // two ways of doing it array of gBreeze query...
+            var query = new gBreeze.EntityQuery(entityType).toType(entityType)
             var results = manager.executeQueryLocally(query);
 
             return results;
@@ -45,7 +45,7 @@
 
         function getAllEntity(entityType) {
 
-            var deferred = Q.defer();
+            var deferred = gQ.defer();
 
             DataProvider.getAllEntity(entityType, manager)
                 .catch(function (err) {
@@ -64,7 +64,7 @@
 
 //    function getAllEntity(entityType) {
 //
-//        var deferred = Q.defer();
+//        var deferred = gQ.defer();
 //
 //        DataProvider.getAllEntity(entityType)
 //            .catch(function (err) {
@@ -83,7 +83,7 @@
 
         function saveEntity(entity) {
 
-            var deferred = Q.defer();
+            var deferred = gQ.defer();
 
             StorageProvider.saveEntity(entity)
                 .catch(function (err) {
@@ -101,7 +101,7 @@
 
         function deleteEntity(entity) {
 
-            var deferred = Q.defer();
+            var deferred = gQ.defer();
 
             StorageProvider.deleteEntity(entity)
                 .catch(function (err) {

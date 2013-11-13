@@ -3,7 +3,7 @@
 
     var module = angular.module('App.BreezeStorage', []);
 
-    module.factory('BreezeStorage', function ($log, Utils) {
+    module.factory('BreezeStorage', function () {
 
         var stashName = "entityGraph";
 

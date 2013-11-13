@@ -13651,108 +13651,6 @@
     });
 }(window, document), !angular.$$csp() && angular.element(document).find("head").prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}</style>'), 
 function(root, factory) {
-    "object" == typeof exports ? module.exports = factory() : "function" == typeof define && define.amd ? define([ "spin" ], factory) : root.Ladda = factory(root.Spinner);
-}(this, function(Spinner) {
-    "use strict";
-    function create(button) {
-        if ("undefined" == typeof button) return console.warn("Ladda button target must be defined."), 
-        void 0;
-        button.querySelector(".ladda-label") || (button.innerHTML = '<span class="ladda-label">' + button.innerHTML + "</span>");
-        var spinner = createSpinner(button), spinnerWrapper = document.createElement("span");
-        spinnerWrapper.className = "ladda-spinner", button.appendChild(spinnerWrapper);
-        var timer, instance = {
-            start: function() {
-                return button.setAttribute("disabled", ""), button.setAttribute("data-loading", ""), 
-                clearTimeout(timer), spinner.spin(spinnerWrapper), this.setProgress(0), this;
-            },
-            startAfter: function(delay) {
-                return clearTimeout(timer), timer = setTimeout(function() {
-                    instance.start();
-                }, delay), this;
-            },
-            stop: function() {
-                return button.removeAttribute("disabled"), button.removeAttribute("data-loading"), 
-                clearTimeout(timer), timer = setTimeout(function() {
-                    spinner.stop();
-                }, 1e3), this;
-            },
-            toggle: function() {
-                return this.isLoading() ? this.stop() : this.start(), this;
-            },
-            setProgress: function(progress) {
-                progress = Math.max(Math.min(progress, 1), 0);
-                var progressElement = button.querySelector(".ladda-progress");
-                0 === progress && progressElement && progressElement.parentNode ? progressElement.parentNode.removeChild(progressElement) : (progressElement || (progressElement = document.createElement("div"), 
-                progressElement.className = "ladda-progress", button.appendChild(progressElement)), 
-                progressElement.style.width = (progress || 0) * button.offsetWidth + "px");
-            },
-            enable: function() {
-                return this.stop(), this;
-            },
-            disable: function() {
-                return this.stop(), button.setAttribute("disabled", ""), this;
-            },
-            isLoading: function() {
-                return button.hasAttribute("data-loading");
-            }
-        };
-        return ALL_INSTANCES.push(instance), instance;
-    }
-    function getAncestorOfTagType(elem, type) {
-        for (;elem.parentNode && elem.tagName !== type; ) elem = elem.parentNode;
-        return elem;
-    }
-    function getRequiredFields(elem) {
-        for (var requirables = [ "input", "textarea" ], inputs = [], i = 0; i < requirables.length; i++) for (var name_els = elem.getElementsByTagName(requirables[i]), j = 0; j < name_els.length; j++) name_els[j].hasAttribute("required") && inputs.push(name_els[j]);
-        return inputs;
-    }
-    function bind(target, options) {
-        options = options || {};
-        var targets = [];
-        "string" == typeof target ? targets = toArray(document.querySelectorAll(target)) : "object" == typeof target && "string" == typeof target.nodeName && (targets = [ target ]);
-        for (var i = 0, len = targets.length; len > i; i++) !function() {
-            var element = targets[i];
-            if ("function" == typeof element.addEventListener) {
-                var instance = create(element), timeout = -1;
-                element.addEventListener("click", function() {
-                    for (var valid = !0, form = getAncestorOfTagType(element, "FORM"), requireds = getRequiredFields(form), i = 0; i < requireds.length; i++) "" === requireds[i].value.replace(/^\s+|\s+$/g, "") && (valid = !1);
-                    valid && (instance.startAfter(1), "number" == typeof options.timeout && (clearTimeout(timeout), 
-                    timeout = setTimeout(instance.stop, options.timeout)), "function" == typeof options.callback && options.callback.apply(null, [ instance ]));
-                }, !1);
-            }
-        }();
-    }
-    function stopAll() {
-        for (var i = 0, len = ALL_INSTANCES.length; len > i; i++) ALL_INSTANCES[i].stop();
-    }
-    function createSpinner(button) {
-        var spinnerColor, height = button.offsetHeight;
-        height > 32 && (height *= .8), button.hasAttribute("data-spinner-size") && (height = parseInt(button.getAttribute("data-spinner-size"), 10)), 
-        button.hasAttribute("data-spinner-color") && (spinnerColor = button.getAttribute("data-spinner-color"));
-        var lines = 12, radius = .2 * height, length = .6 * radius, width = 7 > radius ? 2 : 3;
-        return new Spinner({
-            color: spinnerColor || "#fff",
-            lines: lines,
-            radius: radius,
-            length: length,
-            width: width,
-            zIndex: "auto",
-            top: "auto",
-            left: "auto",
-            className: ""
-        });
-    }
-    function toArray(nodes) {
-        for (var a = [], i = 0; i < nodes.length; i++) a.push(nodes[i]);
-        return a;
-    }
-    var ALL_INSTANCES = [];
-    return {
-        bind: bind,
-        create: create,
-        stopAll: stopAll
-    };
-}), function(root, factory) {
     "object" == typeof exports ? module.exports = factory() : "function" == typeof define && define.amd ? define(factory) : root.Spinner = factory();
 }(this, function() {
     "use strict";
@@ -13932,11 +13830,123 @@ function(root, factory) {
     });
     return !vendor(probe, "transform") && probe.adj ? initVML() : useCssAnimations = vendor(probe, "animation"), 
     Spinner;
+}), function(root, factory) {
+    "object" == typeof exports ? module.exports = factory() : "function" == typeof define && define.amd ? define([ "spin" ], factory) : root.Ladda = factory(root.Spinner);
+}(this, function(Spinner) {
+    "use strict";
+    function create(button) {
+        if ("undefined" == typeof button) return console.warn("Ladda button target must be defined."), 
+        void 0;
+        button.querySelector(".ladda-label") || (button.innerHTML = '<span class="ladda-label">' + button.innerHTML + "</span>");
+        var spinner = createSpinner(button), spinnerWrapper = document.createElement("span");
+        spinnerWrapper.className = "ladda-spinner", button.appendChild(spinnerWrapper);
+        var timer, instance = {
+            start: function() {
+                return button.setAttribute("disabled", ""), button.setAttribute("data-loading", ""), 
+                clearTimeout(timer), spinner.spin(spinnerWrapper), this.setProgress(0), this;
+            },
+            startAfter: function(delay) {
+                return clearTimeout(timer), timer = setTimeout(function() {
+                    instance.start();
+                }, delay), this;
+            },
+            stop: function() {
+                return button.removeAttribute("disabled"), button.removeAttribute("data-loading"), 
+                clearTimeout(timer), timer = setTimeout(function() {
+                    spinner.stop();
+                }, 1e3), this;
+            },
+            toggle: function() {
+                return this.isLoading() ? this.stop() : this.start(), this;
+            },
+            setProgress: function(progress) {
+                progress = Math.max(Math.min(progress, 1), 0);
+                var progressElement = button.querySelector(".ladda-progress");
+                0 === progress && progressElement && progressElement.parentNode ? progressElement.parentNode.removeChild(progressElement) : (progressElement || (progressElement = document.createElement("div"), 
+                progressElement.className = "ladda-progress", button.appendChild(progressElement)), 
+                progressElement.style.width = (progress || 0) * button.offsetWidth + "px");
+            },
+            enable: function() {
+                return this.stop(), this;
+            },
+            disable: function() {
+                return this.stop(), button.setAttribute("disabled", ""), this;
+            },
+            isLoading: function() {
+                return button.hasAttribute("data-loading");
+            }
+        };
+        return ALL_INSTANCES.push(instance), instance;
+    }
+    function getAncestorOfTagType(elem, type) {
+        for (;elem.parentNode && elem.tagName !== type; ) elem = elem.parentNode;
+        return elem;
+    }
+    function getRequiredFields(elem) {
+        for (var requirables = [ "input", "textarea" ], inputs = [], i = 0; i < requirables.length; i++) for (var name_els = elem.getElementsByTagName(requirables[i]), j = 0; j < name_els.length; j++) name_els[j].hasAttribute("required") && inputs.push(name_els[j]);
+        return inputs;
+    }
+    function bind(target, options) {
+        options = options || {};
+        var targets = [];
+        "string" == typeof target ? targets = toArray(document.querySelectorAll(target)) : "object" == typeof target && "string" == typeof target.nodeName && (targets = [ target ]);
+        for (var i = 0, len = targets.length; len > i; i++) !function() {
+            var element = targets[i];
+            if ("function" == typeof element.addEventListener) {
+                var instance = create(element), timeout = -1;
+                element.addEventListener("click", function() {
+                    for (var valid = !0, form = getAncestorOfTagType(element, "FORM"), requireds = getRequiredFields(form), i = 0; i < requireds.length; i++) "" === requireds[i].value.replace(/^\s+|\s+$/g, "") && (valid = !1);
+                    valid && (instance.startAfter(1), "number" == typeof options.timeout && (clearTimeout(timeout), 
+                    timeout = setTimeout(instance.stop, options.timeout)), "function" == typeof options.callback && options.callback.apply(null, [ instance ]));
+                }, !1);
+            }
+        }();
+    }
+    function stopAll() {
+        for (var i = 0, len = ALL_INSTANCES.length; len > i; i++) ALL_INSTANCES[i].stop();
+    }
+    function createSpinner(button) {
+        var spinnerColor, height = button.offsetHeight;
+        height > 32 && (height *= .8), button.hasAttribute("data-spinner-size") && (height = parseInt(button.getAttribute("data-spinner-size"), 10)), 
+        button.hasAttribute("data-spinner-color") && (spinnerColor = button.getAttribute("data-spinner-color"));
+        var lines = 12, radius = .2 * height, length = .6 * radius, width = 7 > radius ? 2 : 3;
+        return new Spinner({
+            color: spinnerColor || "#fff",
+            lines: lines,
+            radius: radius,
+            length: length,
+            width: width,
+            zIndex: "auto",
+            top: "auto",
+            left: "auto",
+            className: ""
+        });
+    }
+    function toArray(nodes) {
+        for (var a = [], i = 0; i < nodes.length; i++) a.push(nodes[i]);
+        return a;
+    }
+    var ALL_INSTANCES = [];
+    return {
+        bind: bind,
+        create: create,
+        stopAll: stopAll
+    };
 }), function() {
     "use strict";
-    angular.module("App", [ "App.controllers", "App.EntityModel", "App.DataContext", "App.DataProvider", "App.Utils", "App.filters", "App.services", "App.BreezeStorage", "App.WebService", "App.MockServiceBreeze", "App.directives", "breeze.directives", "App.LaddaButton" ]).config(function(zDirectivesConfigProvider) {
+    var module = angular.module("App", [ "App.controllers", "App.EntityModel", "App.DataContext", "App.DataProvider", "App.Utils", "App.filters", "App.services", "App.BreezeStorage", "App.WebService", "App.MockServiceBreeze", "App.directives", "breeze.directives", "App.LaddaButton" ]).config(function(zDirectivesConfigProvider) {
         zDirectivesConfigProvider.zValidateTemplate = '<span class="invalid error-msg"><i class="glyphicon glyphicon-warning-sign"></i>%error%</span>';
     });
+    module.value("gLadda", function() {
+        if ("Ladda" in window && "Spinner" in window) return Ladda;
+        throw new Error("The Globals Ladda || Spinner are missing");
+    }()), module.value("gBreeze", function() {
+        if ("breeze" in window) return breeze;
+        throw new Error("The Globals breeze is missing");
+    }()), module.value("gQ", function() {
+        if ("Q" in window) return Q;
+        throw new Error("The Globals Q is missing");
+    }());
 }(), function() {
     "use strict";
     var module = angular.module("breeze.directives", []);
@@ -14063,7 +14073,7 @@ function(root, factory) {
 }(), function() {
     "use strict";
     var module = angular.module("App.controllers", []);
-    module.controller("AppCtrl", function($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, DataProvider, DataContext) {
+    module.controller("AppCtrl", function($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, DataProvider, DataContext, gBreeze) {
         function resetForm() {
             $scope.formData = null, $scope.activeItem = null;
         }
@@ -14083,11 +14093,11 @@ function(root, factory) {
             }), console.log("");
         }
         function updateUI() {
-            var query = new breeze.EntityQuery("Employee");
+            var query = new gBreeze.EntityQuery("Employee");
             $scope.employees = DataContext.manager.executeQueryLocally(query);
-            var query = new breeze.EntityQuery("Departement");
+            var query = new gBreeze.EntityQuery("Departement");
             $scope.departements = DataContext.manager.executeQueryLocally(query);
-            var query = new breeze.EntityQuery("Fonction");
+            var query = new gBreeze.EntityQuery("Fonction");
             $scope.fonctions = DataContext.manager.executeQueryLocally(query);
         }
         $scope.employees = null, $scope.departements = null, $scope.fonctions = null, $scope.isActive = function(item) {
@@ -14106,7 +14116,7 @@ function(root, factory) {
             $scope.formData = formData;
         }, $scope.onAddEmployee = function() {
             var newEntity = DataContext.manager.createEntity("Employee", {});
-            $scope.onSelect(newEntity), deferred.resolve();
+            $scope.onSelect(newEntity);
         }, $scope.isAddEmployeeComplete = function() {
             return "test";
         }, $scope.onAddFonction = function() {
@@ -14142,7 +14152,7 @@ function(root, factory) {
         }, $scope.onGetEntityGraph = function() {
             var importData = BreezeStorage.getEntityGraph();
             DataContext.manager.importEntities(importData, {
-                mergeStrategy: breeze.MergeStrategy.OverwriteChanges
+                mergeStrategy: gBreeze.MergeStrategy.OverwriteChanges
             });
             DataContext.manager.getEntities();
             doIt(), updateUI();
@@ -14184,7 +14194,7 @@ function(root, factory) {
 }(), function() {
     "use strict";
     var services = angular.module("App.DataContext", []);
-    services.factory("DataContext", function(EntityModel, jsonResultsAdapter, DataProvider, $log) {
+    services.factory("DataContext", function(EntityModel, jsonResultsAdapter, DataProvider, $log, gBreeze) {
         function exportEmployees(employees) {
             return manager.exportEntities(employees);
         }
@@ -14194,7 +14204,7 @@ function(root, factory) {
                 var newEntity = manager.createEntity(entityType, row);
                 newEntity.entityAspect.acceptChanges(), entities.push(newEntity);
             });
-            var query = new breeze.EntityQuery(entityType).toType(entityType), results = manager.executeQueryLocally(query);
+            var query = new gBreeze.EntityQuery(entityType).toType(entityType), results = manager.executeQueryLocally(query);
             return results;
         }
         function getAllEntity(entityType) {
@@ -14222,13 +14232,13 @@ function(root, factory) {
                 deferred.resolve(res);
             }), deferred.promise;
         }
-        breeze.config.initializeAdapterInstance("modelLibrary", "backingStore", !0);
-        var serviceName = "http://localhost/~Separ8/local-storage", ds = new breeze.DataService({
+        gBreeze.config.initializeAdapterInstance("modelLibrary", "backingStore", !0);
+        var serviceName = "http://localhost/~Separ8/local-storage", ds = new gBreeze.DataService({
             serviceName: serviceName,
             hasServerMetadata: !1,
             useJsonp: !1,
             jsonResultsAdapter: jsonResultsAdapter
-        }), manager = new breeze.EntityManager({
+        }), manager = new gBreeze.EntityManager({
             dataService: ds
         });
         return EntityModel.initialize(manager.metadataStore), {
@@ -14372,13 +14382,13 @@ function(root, factory) {
 }(), function() {
     "use strict";
     var services = angular.module("App.EntityModel", []);
-    services.factory("EntityModel", function() {
+    services.factory("EntityModel", function($http, $log, $rootScope, gBreeze) {
         function initialize(metadataStore) {
             function Employee() {}
             metadataStore.addEntityType({
                 shortName: "Employee",
                 namespace: "Context",
-                autoGeneratedKeyType: breeze.AutoGeneratedKeyType.Identity,
+                autoGeneratedKeyType: gBreeze.AutoGeneratedKeyType.Identity,
                 dataProperties: {
                     id: {
                         dataType: DT.Int64,
@@ -14426,7 +14436,7 @@ function(root, factory) {
             metadataStore.addEntityType({
                 shortName: "Departement",
                 namespace: "Context",
-                autoGeneratedKeyType: breeze.AutoGeneratedKeyType.Identity,
+                autoGeneratedKeyType: gBreeze.AutoGeneratedKeyType.Identity,
                 dataProperties: {
                     id: {
                         dataType: DT.Int64,
@@ -14450,7 +14460,7 @@ function(root, factory) {
             }), metadataStore.setEntityTypeForResourceName("Departement", "Departement"), metadataStore.addEntityType({
                 shortName: "Fonction",
                 namespace: "Context",
-                autoGeneratedKeyType: breeze.AutoGeneratedKeyType.Identity,
+                autoGeneratedKeyType: gBreeze.AutoGeneratedKeyType.Identity,
                 dataProperties: {
                     id: {
                         dataType: DT.Int64,
@@ -14486,7 +14496,7 @@ function(root, factory) {
                 });
             });
         }
-        var DT = breeze.DataType, Validator = breeze.Validator;
+        var DT = gBreeze.DataType, Validator = gBreeze.Validator;
         return {
             initialize: initialize
         };
@@ -14503,10 +14513,10 @@ function(root, factory) {
 }(), function() {
     "use strict";
     var module = angular.module("App.LaddaButton", []);
-    module.directive("laddaButton", function($log, $parse) {
+    module.directive("laddaButton", function($log, $parse, gLadda) {
         function link(scope, element, attrs) {
             element.bind("click", function() {
-                var btn = ladda.create(this);
+                var btn = gLadda.create(this);
                 btn.start();
                 var fn = $parse(attrs.laddaButton);
                 scope.$apply(function() {
@@ -14525,34 +14535,36 @@ function(root, factory) {
 }(), function() {
     "use strict";
     var services = angular.module("App.MockServiceBreeze", []);
-    services.value("jsonResultsAdapter", new breeze.JsonResultsAdapter({
-        name: "context",
-        extractResults: function(data) {
-            var results = data.results;
-            if (!results) throw new Error("Unable to resolve 'results' property");
-            return results && (results.employes || results.departements || results.fonctions);
-        },
-        visitNode: function(node, parseContext) {
-            var index = parseContext.url.lastIndexOf("/"), str = parseContext.url.substr(index);
-            return "/employes.json" === str ? {
-                entityType: "Employee"
-            } : "/departements.json" === str ? {
-                entityType: "Departement"
-            } : "/fonctions.json" === str ? {
-                entityType: "Fonction"
-            } : void 0;
-        }
-    })), services.factory("MockServiceBreeze", function() {
+    services.factory("jsonResultsAdapter", function(gBreeze) {
+        return new gBreeze.JsonResultsAdapter({
+            name: "context",
+            extractResults: function(data) {
+                var results = data.results;
+                if (!results) throw new Error("Unable to resolve 'results' property");
+                return results && (results.employes || results.departements || results.fonctions);
+            },
+            visitNode: function(node, parseContext) {
+                var index = parseContext.url.lastIndexOf("/"), str = parseContext.url.substr(index);
+                return "/employes.json" === str ? {
+                    entityType: "Employee"
+                } : "/departements.json" === str ? {
+                    entityType: "Departement"
+                } : "/fonctions.json" === str ? {
+                    entityType: "Fonction"
+                } : void 0;
+            }
+        });
+    }), services.factory("MockServiceBreeze", function(Utils, $log, gBreeze) {
         function getAllEmployee() {
-            var query = breeze.EntityQuery.from("assets/employes.json");
+            var query = gBreeze.EntityQuery.from("assets/employes.json");
             return manager.executeQuery(query).then(returnResults);
         }
         function getAllDepartement() {
-            var query = breeze.EntityQuery.from("assets/departements.json");
+            var query = gBreeze.EntityQuery.from("assets/departements.json");
             return manager.executeQuery(query).then(returnResults);
         }
         function getAllFonction() {
-            var query = breeze.EntityQuery.from("/assets/fonctions.json");
+            var query = gBreeze.EntityQuery.from("/assets/fonctions.json");
             return manager.executeQuery(query).then(returnResults);
         }
         function returnResults(data) {
@@ -14587,24 +14599,7 @@ function(root, factory) {
         WS: "WS",
         MOCK_BREEZE: "MOCK_BREEZE",
         MOCK: "MOCK"
-    }), services.value("jsonResultsAdapter", new breeze.JsonResultsAdapter({
-        name: "context",
-        extractResults: function(data) {
-            var results = data.results;
-            if (!results) throw new Error("Unable to resolve 'results' property");
-            return results && (results.employes || results.departements || results.fonctions);
-        },
-        visitNode: function(node, parseContext) {
-            var index = parseContext.url.lastIndexOf("/"), str = parseContext.url.substr(index);
-            return "/employes.json" === str ? {
-                entityType: "Employee"
-            } : "/departements.json" === str ? {
-                entityType: "Departement"
-            } : "/fonctions.json" === str ? {
-                entityType: "Fonction"
-            } : void 0;
-        }
-    })), services.factory("DataModel", function() {
+    }), services.factory("DataModel", function() {
         var dataModel = {};
         return dataModel.toggleViewOpen = !0, dataModel.sideNav = [], dataModel.currentPage = {}, 
         dataModel.isOnline = function() {
@@ -14721,3 +14716,4 @@ function(root, factory) {
         };
     });
 }();
+//# sourceMappingURL=./bundle-map.js

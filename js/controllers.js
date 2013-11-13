@@ -3,7 +3,7 @@
 
     var module = angular.module('App.controllers', []);
 
-    module.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, DataProvider, DataContext) {
+    module.controller('AppCtrl', function ($scope, $rootScope, $timeout, $log, $http, DataModel, BreezeStorage, DataProvider, DataContext, gBreeze, gQ) {
 
 //        $log = $log.getInstance("AppCtrl", "color:#c44550;");
 //        $log.error('Debug Test');
@@ -69,7 +69,6 @@
 
             var newEntity = DataContext.manager.createEntity('Employee', {});
             $scope.onSelect(newEntity);
-            deferred.resolve();
         }
 
         $scope.isAddEmployeeComplete = function () {
@@ -193,13 +192,13 @@
         }
 
         function updateUI() {
-            var query = new breeze.EntityQuery('Employee')
+            var query = new gBreeze.EntityQuery('Employee')
             $scope.employees = DataContext.manager.executeQueryLocally(query);
 
-            var query = new breeze.EntityQuery('Departement')
+            var query = new gBreeze.EntityQuery('Departement')
             $scope.departements = DataContext.manager.executeQueryLocally(query);
 
-            var query = new breeze.EntityQuery('Fonction')
+            var query = new gBreeze.EntityQuery('Fonction')
             $scope.fonctions = DataContext.manager.executeQueryLocally(query);
         }
 
@@ -207,7 +206,7 @@
 
             var importData = BreezeStorage.getEntityGraph();
 
-            DataContext.manager.importEntities(importData, {mergeStrategy: breeze.MergeStrategy.OverwriteChanges});
+            DataContext.manager.importEntities(importData, {mergeStrategy: gBreeze.MergeStrategy.OverwriteChanges});
 
             var entities = DataContext.manager.getEntities();
 
@@ -223,7 +222,7 @@
 
         $scope.onSaveEntityGraph = function () {
 
-            var deferred = Q.defer();
+            var deferred = gQ.defer();
             doIt();
 
             var entities = DataContext.manager.getEntities();
@@ -259,7 +258,7 @@
         }
 
 
-        // form the breeze edmunds example
+        // form the gBreeze edmunds example
         function filterEntityById(entity) {
             return function (id) {
                 return entity.filter(function (e) {
